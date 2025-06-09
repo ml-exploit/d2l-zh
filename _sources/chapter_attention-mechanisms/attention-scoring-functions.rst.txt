@@ -1,0 +1,395 @@
+
+.. _sec_attention-scoring-functions:
+
+注意力评分函数
+==============
+
+
+:numref:`sec_nadaraya-watson`\ 使用了高斯核来对查询和键之间的关系建模。
+:eq:`eq_nadaraya-watson-gaussian`\ 中的
+高斯核指数部分可以视为\ *注意力评分函数*\ （attention scoring
+function）， 简称\ *评分函数*\ （scoring function），
+然后把这个函数的输出结果输入到softmax函数中进行运算。
+通过上述步骤，将得到与键对应的值的概率分布（即注意力权重）。
+最后，注意力汇聚的输出就是基于这些注意力权重的值的加权和。
+
+从宏观来看，上述算法可以用来实现
+:numref:`fig_qkv`\ 中的注意力机制框架。
+:numref:`fig_attention_output`\ 说明了
+如何将注意力汇聚的输出计算成为值的加权和，
+其中\ :math:`a`\ 表示注意力评分函数。 由于注意力权重是概率分布，
+因此加权和其本质上是加权平均值。
+
+.. _fig_attention_output:
+
+.. figure:: ../img/attention-output.svg
+
+   计算注意力汇聚的输出为值的加权和
+
+
+用数学语言描述，假设有一个查询 :math:`\mathbf{q} \in \mathbb{R}^q`\ 和
+:math:`m`\ 个“键－值”对
+:math:`(\mathbf{k}_1, \mathbf{v}_1), \ldots, (\mathbf{k}_m, \mathbf{v}_m)`\ ，
+其中\ :math:`\mathbf{k}_i \in \mathbb{R}^k`\ ，\ :math:`\mathbf{v}_i \in \mathbb{R}^v`\ 。
+注意力汇聚函数\ :math:`f`\ 就被表示成值的加权和：
+
+.. math:: f(\mathbf{q}, (\mathbf{k}_1, \mathbf{v}_1), \ldots, (\mathbf{k}_m, \mathbf{v}_m)) = \sum_{i=1}^m \alpha(\mathbf{q}, \mathbf{k}_i) \mathbf{v}_i \in \mathbb{R}^v,
+   :label: eq_attn-pooling
+
+其中查询\ :math:`\mathbf{q}`\ 和键\ :math:`\mathbf{k}_i`\ 的注意力权重（标量）
+是通过注意力评分函数\ :math:`a`\ 将两个向量映射成标量，
+再经过softmax运算得到的：
+
+.. math:: \alpha(\mathbf{q}, \mathbf{k}_i) = \mathrm{softmax}(a(\mathbf{q}, \mathbf{k}_i)) = \frac{\exp(a(\mathbf{q}, \mathbf{k}_i))}{\sum_{j=1}^m \exp(a(\mathbf{q}, \mathbf{k}_j))} \in \mathbb{R}.
+   :label: eq_attn-scoring-alpha
+
+正如上图所示，选择不同的注意力评分函数\ :math:`a`\ 会导致不同的注意力汇聚操作。
+本节将介绍两个流行的评分函数，稍后将用他们来实现更复杂的注意力机制。
+
+.. raw:: latex
+
+   \diilbookstyleinputcell
+
+.. code:: python
+
+    import math
+    import mlx.core as mx
+    import mlx.nn as nn
+    from d2l import mlx as d2l
+
+掩蔽softmax操作
+---------------
+
+正如上面提到的，softmax操作用于输出一个概率分布作为注意力权重。
+在某些情况下，并非所有的值都应该被纳入到注意力汇聚中。 例如，为了在
+:numref:`sec_machine_translation`\ 中高效处理小批量数据集，
+某些文本序列被填充了没有意义的特殊词元。
+为了仅将有意义的词元作为值来获取注意力汇聚，
+可以指定一个有效序列长度（即词元的个数），
+以便在计算softmax时过滤掉超出指定范围的位置。
+下面的\ ``masked_softmax``\ 函数
+实现了这样的\ *掩蔽softmax操作*\ （masked softmax operation），
+其中任何超出有效长度的位置都被掩蔽并置为0。
+
+.. raw:: latex
+
+   \diilbookstyleinputcell
+
+.. code:: python
+
+    #@save
+    def masked_softmax(X, valid_lens):
+        """在最后一个轴上通过掩蔽元素来执行 softmax 操作。"""
+        # X: 3D tensor, valid_lens: 1D or 2D tensor
+        def _sequence_mask(X, valid_len, value=0):
+            maxlen = X.shape[1]
+            mask = mx.arange((maxlen), dtype=mx.float32)[None, :] < valid_len[:, None]
+            mask = mask.astype(X.dtype)  # 将掩码转换为与X相同的数据类型以进行算术运算
+            # 使用算术运算将被掩码的元素设置为指定值
+            X = X * mask + value * (1 - mask)
+            return X
+    
+        if valid_lens is None:
+            return nn.softmax(X, axis=-1)
+        else:
+            shape = X.shape
+            if valid_lens.ndim == 1:
+                # 如果 valid_lens 是一维的，通常需要将其扩展以匹配 X 被展平后的第一个维度。
+                # 例如，如果 X 是 (批量大小, 查询数量, 键数量)，而 valid_lens 是 (批量大小,)，
+                # 这里的操作（结合后续的 reshape）旨在将每个样本的有效长度应用到其所有查询上。
+                valid_lens = mx.repeat(valid_lens, shape[1])
+            else:
+                # 如果 valid_lens 已经是二维的，后续会直接 reshape。
+                valid_lens = valid_lens.reshape(-1)
+    
+            # 在最后一个轴上，将被掩码的元素（即超出有效长度的部分）
+            # 替换为一个非常大的负数，其指数运算结果将输出0。
+            X = _sequence_mask(X.reshape(-1, shape[-1]), valid_lens, value=-1e6)
+            return nn.softmax(X.reshape(shape), axis=-1)
+
+为了演示此函数是如何工作的，
+考虑由两个\ :math:`2 \times 4`\ 矩阵表示的样本，
+这两个样本的有效长度分别为\ :math:`2`\ 和\ :math:`3`\ 。
+经过掩蔽softmax操作，超出有效长度的值都被掩蔽为0。
+
+.. raw:: latex
+
+   \diilbookstyleinputcell
+
+.. code:: python
+
+    masked_softmax(mx.random.uniform(shape=(2, 2, 4)), mx.array([2, 3]))
+
+
+
+
+.. raw:: latex
+
+   \diilbookstyleoutputcell
+
+.. parsed-literal::
+    :class: output
+
+    array([[[0.661727, 0.338273, 0, 0],
+            [0.520156, 0.479844, 0, 0]],
+           [[0.276534, 0.250876, 0.47259, 0],
+            [0.267492, 0.280078, 0.45243, 0]]], dtype=float32)
+
+
+
+同样，也可以使用二维张量，为矩阵样本中的每一行指定有效长度。
+
+.. raw:: latex
+
+   \diilbookstyleinputcell
+
+.. code:: python
+
+    masked_softmax(mx.random.uniform(shape=(2, 2, 4)), mx.array([[1, 3], [2, 4]]))
+
+
+
+
+.. raw:: latex
+
+   \diilbookstyleoutputcell
+
+.. parsed-literal::
+    :class: output
+
+    array([[[1, 0, 0, 0],
+            [0.283275, 0.352773, 0.363953, 0]],
+           [[0.507271, 0.492729, 0, 0],
+            [0.303458, 0.211256, 0.309937, 0.175348]]], dtype=float32)
+
+
+
+.. _subsec_additive-attention:
+
+加性注意力
+----------
+
+
+一般来说，当查询和键是不同长度的矢量时，可以使用加性注意力作为评分函数。
+给定查询\ :math:`\mathbf{q} \in \mathbb{R}^q`\ 和
+键\ :math:`\mathbf{k} \in \mathbb{R}^k`\ ， *加性注意力*\ （additive
+attention）的评分函数为
+
+.. math:: a(\mathbf q, \mathbf k) = \mathbf w_v^\top \text{tanh}(\mathbf W_q\mathbf q + \mathbf W_k \mathbf k) \in \mathbb{R},
+   :label: eq_additive-attn
+
+其中可学习的参数是\ :math:`\mathbf W_q\in\mathbb R^{h\times q}`\ 、
+:math:`\mathbf W_k\in\mathbb R^{h\times k}`\ 和
+:math:`\mathbf w_v\in\mathbb R^{h}`\ 。 如
+:eq:`eq_additive-attn`\ 所示，
+将查询和键连结起来后输入到一个多层感知机（MLP）中，
+感知机包含一个隐藏层，其隐藏单元数是一个超参数\ :math:`h`\ 。
+通过使用\ :math:`\tanh`\ 作为激活函数，并且禁用偏置项。
+
+下面来实现加性注意力。
+
+.. raw:: latex
+
+   \diilbookstyleinputcell
+
+.. code:: python
+
+    #@save
+    class AdditiveAttention(nn.Module):
+        """Additive attention."""
+        def __init__(self, k_inputs, q_inputs, num_hiddens, dropout, **kwargs):
+            super(AdditiveAttention, self).__init__(**kwargs)
+            self.W_k = nn.Linear(k_inputs, num_hiddens, bias=False)
+            self.W_q = nn.Linear(q_inputs, num_hiddens, bias=False)
+            self.w_v = nn.Linear(num_hiddens, 1, bias=False)
+            self.dropout = nn.Dropout(dropout)
+    
+        def __call__(self, queries, keys, values, valid_lens):
+            queries = self.W_q(queries)
+            keys = self.W_k(keys)
+            # After dimension expansion, shape of queries: (batch_size, no. of
+            # queries, 1, num_hiddens) and shape of keys: (batch_size, 1, no. of
+            # key-value pairs, num_hiddens). Sum them up with broadcasting
+            features = mx.expand_dims(queries, axis=2) + mx.expand_dims(keys, axis=1)
+            features = mx.tanh(features)
+            # There is only one output of self.w_v, so we remove the last
+            # one-dimensional entry from the shape. Shape of scores: (batch_size,
+            # no. of queries, no. of key-value pairs)
+            scores = self.w_v(features).squeeze(-1)
+            self._attention_weights = masked_softmax(scores, valid_lens)
+            # Shape of values: (batch_size, no. of key-value pairs, value
+            # dimension)
+            return mx.matmul(self.dropout(self._attention_weights), values)
+    
+        @property
+        def attention_weights(self):
+            return self._attention_weights
+
+用一个小例子来演示上面的\ ``AdditiveAttention``\ 类，
+其中查询、键和值的形状为（批量大小，步数或词元序列长度，特征大小），
+实际输出为\ :math:`(2,1,20)`\ 、\ :math:`(2,10,2)`\ 和\ :math:`(2,10,4)`\ 。
+注意力汇聚输出的形状为（批量大小，查询的步数，值的维度）。
+
+.. raw:: latex
+
+   \diilbookstyleinputcell
+
+.. code:: python
+
+    queries = mx.random.normal(loc=0, scale=1, shape=(2, 1, 20))
+    keys = mx.ones((2, 10, 2))
+    # values = mx.random.normal(loc=0, scale=1, shape=(2, 10, 4))
+    values = mx.arange(40, dtype=mx.float32).reshape((1, 10, 4))
+    values = mx.repeat(values, repeats=2, axis=0)
+    
+    valid_lens = mx.array([2, 6])
+    attention = AdditiveAttention(k_inputs=2, q_inputs=20, num_hiddens=8, dropout=0.1)
+    attention.eval()
+    d2l.check_shape(attention(queries, keys, values, valid_lens), (2, 1, 4))
+    attention(queries, keys, values, valid_lens)
+
+
+
+
+.. raw:: latex
+
+   \diilbookstyleoutputcell
+
+.. parsed-literal::
+    :class: output
+
+    array([[[2, 3, 4, 5]],
+           [[10, 11, 12, 13]]], dtype=float32)
+
+
+
+尽管加性注意力包含了可学习的参数，但由于本例子中每个键都是相同的，
+所以注意力权重是均匀的，由指定的有效长度决定。
+
+.. raw:: latex
+
+   \diilbookstyleinputcell
+
+.. code:: python
+
+    d2l.show_heatmaps(attention.attention_weights.reshape((1, 1, 2, 10)),
+                      xlabel='Keys', ylabel='Queries')
+
+
+
+.. figure:: output_attention-scoring-functions_c16480_13_0.svg
+
+
+缩放点积注意力
+--------------
+
+使用点积可以得到计算效率更高的评分函数，
+但是点积操作要求查询和键具有相同的长度\ :math:`d`\ 。
+假设查询和键的所有元素都是独立的随机变量， 并且都满足零均值和单位方差，
+那么两个向量的点积的均值为\ :math:`0`\ ，方差为\ :math:`d`\ 。
+为确保无论向量长度如何，
+点积的方差在不考虑向量长度的情况下仍然是\ :math:`1`\ ，
+我们再将点积除以\ :math:`\sqrt{d}`\ ， 则\ *缩放点积注意力*\ （scaled
+dot-product attention）评分函数为：
+
+.. math:: a(\mathbf q, \mathbf k) = \mathbf{q}^\top \mathbf{k}  /\sqrt{d}.
+
+在实践中，我们通常从小批量的角度来考虑提高效率，
+例如基于\ :math:`n`\ 个查询和\ :math:`m`\ 个键－值对计算注意力，
+其中查询和键的长度为\ :math:`d`\ ，值的长度为\ :math:`v`\ 。
+查询\ :math:`\mathbf Q\in\mathbb R^{n\times d}`\ 、
+键\ :math:`\mathbf K\in\mathbb R^{m\times d}`\ 和
+值\ :math:`\mathbf V\in\mathbb R^{m\times v}`\ 的缩放点积注意力是：
+
+.. math::  \mathrm{softmax}\left(\frac{\mathbf Q \mathbf K^\top }{\sqrt{d}}\right) \mathbf V \in \mathbb{R}^{n\times v}.
+   :label: eq_softmax_QK_V
+
+下面的缩放点积注意力的实现使用了暂退法进行模型正则化。
+
+.. raw:: latex
+
+   \diilbookstyleinputcell
+
+.. code:: python
+
+    #@save
+    class DotProductAttention(nn.Module):  #@save
+        """缩放点积注意力"""
+        def __init__(self, dropout):
+            super().__init__()
+            self.dropout = nn.Dropout(dropout)
+    
+        # Shape of queries: (batch_size, no. of queries, d)
+        # Shape of keys: (batch_size, no. of key-value pairs, d)
+        # Shape of values: (batch_size, no. of key-value pairs, value dimension)
+        # Shape of valid_lens: (batch_size,) or (batch_size, no. of queries)
+        def __call__(self, queries, keys, values, valid_lens=None):
+            d = queries.shape[-1]
+            # Swap the last two dimensions of keys with keys.transpose(1, 2)
+            scores = mx.matmul(queries, keys.transpose(0, 2, 1)) / math.sqrt(d)
+            self._attention_weights = masked_softmax(scores, valid_lens)
+            return mx.matmul(self.dropout(self._attention_weights), values)
+    
+        @property
+        def attention_weights(self):
+            return self._attention_weights
+
+为了演示上述的\ ``DotProductAttention``\ 类，
+我们使用与先前加性注意力例子中相同的键、值和有效长度。
+对于点积操作，我们令查询的特征维度与键的特征维度大小相同。
+
+.. raw:: latex
+
+   \diilbookstyleinputcell
+
+.. code:: python
+
+    queries = mx.random.normal(loc=0, scale=1, shape=(2, 1, 2))
+    attention = DotProductAttention(dropout=0.5)
+    attention.eval()
+    attention(queries, keys, values, valid_lens)
+
+
+
+
+.. raw:: latex
+
+   \diilbookstyleoutputcell
+
+.. parsed-literal::
+    :class: output
+
+    array([[[2, 3, 4, 5]],
+           [[10, 11, 12, 13]]], dtype=float32)
+
+
+
+与加性注意力演示相同，由于键包含的是相同的元素，
+而这些元素无法通过任何查询进行区分，因此获得了均匀的注意力权重。
+
+.. raw:: latex
+
+   \diilbookstyleinputcell
+
+.. code:: python
+
+    d2l.show_heatmaps(attention.attention_weights.reshape((1, 1, 2, 10)),
+                      xlabel='Keys', ylabel='Queries')
+
+
+
+.. figure:: output_attention-scoring-functions_c16480_19_0.svg
+
+
+小结
+----
+
+-  将注意力汇聚的输出计算可以作为值的加权平均，选择不同的注意力评分函数会带来不同的注意力汇聚操作。
+-  当查询和键是不同长度的矢量时，可以使用可加性注意力评分函数。当它们的长度相同时，使用缩放的“点－积”注意力评分函数的计算效率更高。
+
+练习
+----
+
+1. 修改小例子中的键，并且可视化注意力权重。可加性注意力和缩放的“点－积”注意力是否仍然产生相同的结果？为什么？
+2. 只使用矩阵乘法，能否为具有不同矢量长度的查询和键设计新的评分函数？
+3. 当查询和键具有相同的矢量长度时，矢量求和作为评分函数是否比“点－积”更好？为什么？

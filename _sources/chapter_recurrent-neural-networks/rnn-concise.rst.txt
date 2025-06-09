@@ -1,0 +1,296 @@
+
+.. _sec_rnn-concise:
+
+循环神经网络的简洁实现
+======================
+
+
+虽然 :numref:`sec_rnn_scratch`
+对了解循环神经网络的实现方式具有指导意义，但并不方便。
+本节将展示如何使用深度学习框架的高级API提供的函数更有效地实现相同的语言模型。
+我们仍然从读取时光机器数据集开始。
+
+.. raw:: latex
+
+   \diilbookstyleinputcell
+
+.. code:: python
+
+    import mlx
+    import mlx.core as mx
+    import mlx.nn as nn
+    from d2l import mlx as d2l
+    
+    batch_size, num_steps = 32, 35
+    train_iter, vocab = d2l.load_data_time_machine(batch_size, num_steps)
+
+定义模型
+--------
+
+高级API提供了循环神经网络的实现。
+我们构造一个具有256个隐藏单元的单隐藏层的循环神经网络层\ ``rnn_layer``\ 。
+事实上，我们还没有讨论多层循环神经网络的意义（这将在
+:numref:`sec_deep_rnn`\ 中介绍）。
+现在仅需要将多层理解为一层循环神经网络的输出被用作下一层循环神经网络的输入就足够了。
+
+.. raw:: latex
+
+   \diilbookstyleinputcell
+
+.. code:: python
+
+    num_hiddens = 256
+    rnn_layer = nn.RNN(len(vocab), num_hiddens)
+
+.. raw:: latex
+
+   \diilbookstyleinputcell
+
+.. code:: python
+
+    state = mx.zeros((1, batch_size, num_hiddens))
+    state.shape
+
+
+
+
+.. raw:: latex
+
+   \diilbookstyleoutputcell
+
+.. parsed-literal::
+    :class: output
+
+    (1, 32, 256)
+
+
+
+通过一个隐状态和一个输入，我们就可以用更新后的隐状态计算输出。
+需要强调的是，\ ``rnn_layer``\ 的“输出”（\ ``Y``\ ）不涉及输出层的计算：
+它是指每个时间步的隐状态，这些隐状态可以用作后续输出层的输入。
+
+.. raw:: latex
+
+   \diilbookstyleinputcell
+
+.. code:: python
+
+    X = mx.random.uniform(shape=(num_steps, batch_size, len(vocab)))
+    Y = rnn_layer(X.swapaxes(0, 1), state)[0, :, :, :].swapaxes(0, 1)
+    state_new = rnn_layer(X.swapaxes(0, 1), state)[:, :, -1, :]
+    Y.shape, state_new.shape
+
+
+
+
+.. raw:: latex
+
+   \diilbookstyleoutputcell
+
+.. parsed-literal::
+    :class: output
+
+    ((35, 32, 256), (1, 32, 256))
+
+
+
+与 :numref:`sec_rnn_scratch`\ 类似，
+我们为一个完整的循环神经网络模型定义了一个\ ``RNNModel``\ 类。
+注意，\ ``rnn_layer``\ 只包含隐藏的循环层，我们还需要创建一个单独的输出层。
+
+.. raw:: latex
+
+   \diilbookstyleinputcell
+
+.. code:: python
+
+    #@save
+    class RNNModel(nn.Module):
+        """循环神经网络模型
+    
+        Defined in :numref:`sec_rnn-concise`"""
+        def __init__(self, rnn_layer, vocab_size, bidirectional=False, **kwargs):
+            super(RNNModel, self).__init__(**kwargs)
+            self.rnn = rnn_layer
+            self.vocab_size = vocab_size
+            self.num_hiddens = self.rnn.hidden_size
+            self.bidirectional = bidirectional
+            # 如果RNN是双向的，num_directions应该是2，否则应该是1
+            if not self.bidirectional:
+                self.num_directions = 1
+                self.linear = nn.Linear(self.num_hiddens, self.vocab_size)
+            else:
+                self.num_directions = 2
+                self.linear = nn.Linear(self.num_hiddens * 2, self.vocab_size)
+    
+        def __call__(self, inputs, state):
+            # inputs shape: (batch_size, seq_len) -> e.g., (32, 35)
+            # state: tuple (H, C) for LSTM, each (1, N, H) -> (1, 32, 256)
+            #        tensor H for GRU/RNN, shape (1, N, H) -> (1, 32, 256)
+    
+            X = d2l.one_hot(inputs.T, self.vocab_size) # X shape: (seq_len, batch_size, vocab_size) -> (35, 32, 28)
+            """待修改的bug
+            这里的转置是完全不必要的，但是移除过后训练会失败，是因为train_epoch_ch8()函数中loss_fn里面多了个不必要的转置.T。
+    
+            为什么移除 Transpose 会失败？
+    
+            1. 失败情况 (无 Transpose):
+            rnn_out 是 (N, L, H) -> (32, 35, 256)。
+            rnn_out.reshape((-1, H)) 对前两个维度 (N, L) 执行按行展开，得到 (N * L, H)，顺序是 Batch-Major。
+            output 是 (N * L, vocab_size)，顺序是 Batch-Major。
+            y (目标) 经过 y.T.reshape((-1,)) 处理后是 (L * N,)，顺序是 Time-Major。
+            Batch-Major (预测) vs Time-Major (目标) -> 顺序不匹配 -> 训练失败。
+    
+            2. 正确情况 (有 Transpose):
+            rnn_out 是 (N, L, H) -> (32, 35, 256)。
+            rnn_out.transpose(1, 0, 2) 得到 (L, N, H) -> (35, 32, 256)。
+            rnn_out.reshape((-1, H)) 对前两个维度 (L, N) 执行按行展开，得到 (L * N, H)，顺序是 Time-Major。
+            output 是 (L * N, vocab_size)，顺序是 Time-Major。
+            y (目标) 经过 y.T.reshape((-1,)) 处理后是 (L * N,)，顺序是 Time-Major。
+            Time-Major (预测) vs Time-Major (目标) -> 顺序匹配 -> 训练成功。
+    
+    
+    
+            现在我们没有修改这部分，以及RNNModelScratch类，是不确定修改了这部分是否会对后续有影响。
+            """
+            X = X.astype(mx.float32)
+    
+            # Transpose X from LND to NLD for mlx.nn recurrent layers
+            X = X.transpose(1, 0, 2) # X shape: (batch_size, seq_len, vocab_size) -> (32, 35, 28)
+    
+            if isinstance(self.rnn, nn.LSTM):
+                # LSTM state is a tuple (H, C), each (num_layers * num_dirs, N, H)
+                # Extract initial hidden/cell state for the loop (N, H) assuming single layer/dir
+                hidden_init = state[0][0] # Shape (N, H) -> (32, 256)
+                cell_init = state[1][0]   # Shape (N, H) -> (32, 256)
+    
+                # mlx.nn.LSTM expects NLD input, (N,H) state, returns (output, cell_states) both N L H
+                rnn_out, cell_states = self.rnn(X, hidden=hidden_init, cell=cell_init)
+                # rnn_out shape: (N, L, H) -> (32, 35, 256)
+                # cell_states shape: (N, L, H) -> (32, 35, 256)
+    
+                # Extract the final hidden and cell state from the sequences
+                final_hidden = rnn_out[:, -1, :] # Shape (N, H) -> (32, 256)
+                final_cell = cell_states[:, -1, :] # Shape (N, H) -> (32, 256)
+    
+                # Repack state into (num_layers * num_dirs, N, H) format (1, 32, 256)
+                state = (mx.expand_dims(final_hidden, 0), mx.expand_dims(final_cell, 0))
+    
+            elif isinstance(self.rnn, (nn.GRU, nn.RNN)):
+                # GRU/RNN state is a single tensor H (num_layers * num_dirs, N, H)
+                # Extract initial hidden state for the loop (N, H) assuming single layer/dir
+                hidden_init = state[0] # Shape (N, H) -> (32, 256)
+    
+                # mlx.nn.GRU/RNN expect NLD input, (N,H) state, return output (N, L, H)
+                rnn_out = self.rnn(X, hidden=hidden_init) # Pass (N, H) state
+                # rnn_out shape: (N, L, H) -> (32, 35, 256)
+                """
+                这里的转置同样是不必要的，要和上面一起修改
+                """
+    
+                # Extract the final hidden state from the sequence
+                final_hidden = rnn_out[:, -1, :] # Shape (N, H) -> (32, 256)
+    
+                # Repack state into (num_layers * num_dirs, N, H) format
+                state = mx.expand_dims(final_hidden, 0) # Shape (1, 32, 256)
+            else:
+                # Handle other potential RNN types or raise an error
+                raise TypeError(f"Unsupported RNN layer type: {type(self.rnn)}")
+    
+            # Process output
+            # rnn_out shape: (N, L, H * num_directions) -> (32, 35, 256)
+            # Transpose output from N L H back to L N H for consistency before linear layer
+            rnn_out = rnn_out.transpose(1, 0, 2) # Shape (L, N, H) -> (35, 32, 256)
+    
+            # Reshape for the linear layer
+            # Input shape: (L * N, H * num_directions) -> (35 * 32, 256)
+            output = self.linear(rnn_out.reshape((-1, rnn_out.shape[-1])))
+            # output shape: (L * N, vocab_size) -> (1120, 28)
+    
+            return output, state
+    
+        def begin_state(self, batch_size=1, device=None):
+            # 假设nn.RNN只有一层，只有在是LSTM或GRU时才处理num_layers
+            num_layers = getattr(self.rnn, 'num_layers', 1)
+            if not isinstance(self.rnn, nn.LSTM):
+                # nn.GRU以张量作为隐状态
+                return mx.zeros((self.num_directions * num_layers, batch_size, self.num_hiddens))
+            else:
+                # nn.LSTM以元组作为隐状态
+                return (mx.zeros((self.num_directions * num_layers, batch_size, self.num_hiddens)),
+                        mx.zeros((self.num_directions * num_layers, batch_size, self.num_hiddens)))
+
+训练与预测
+----------
+
+在训练模型之前，让我们基于一个具有随机权重的模型进行预测。
+
+.. raw:: latex
+
+   \diilbookstyleinputcell
+
+.. code:: python
+
+    net = RNNModel(rnn_layer, vocab_size=len(vocab))
+    d2l.predict_ch8('time traveller', 10, net, vocab)
+
+
+
+
+.. raw:: latex
+
+   \diilbookstyleoutputcell
+
+.. parsed-literal::
+    :class: output
+
+    'time traveller          '
+
+
+
+很明显，这种模型根本不能输出好的结果。 接下来，我们使用
+:numref:`sec_rnn_scratch`\ 中
+定义的超参数调用\ ``train_ch8``\ ，并且使用高级API训练模型。
+
+.. raw:: latex
+
+   \diilbookstyleinputcell
+
+.. code:: python
+
+    num_epochs, lr = 500, 1
+    d2l.train_ch8(net, train_iter, vocab, lr, num_epochs)
+
+
+.. raw:: latex
+
+   \diilbookstyleoutputcell
+
+.. parsed-literal::
+    :class: output
+
+    困惑度 1.3, 116764.0 词元/秒
+    time traveller proceeded as meas long than surdicension of it sa
+    travellerithe forit no are mowetravell psopee a monthe wour
+
+
+
+.. figure:: output_rnn-concise_bfefb3_12_1.svg
+
+
+与上一节相比，由于深度学习框架的高级API对代码进行了更多的优化，
+该模型在较短的时间内达到了较低的困惑度。
+
+小结
+----
+
+-  深度学习框架的高级API提供了循环神经网络层的实现。
+-  高级API的循环神经网络层返回一个输出和一个更新后的隐状态，我们还需要计算整个模型的输出层。
+-  相比从零开始实现的循环神经网络，使用高级API实现可以加速训练。
+
+练习
+----
+
+1. 尝试使用高级API，能使循环神经网络模型过拟合吗？
+2. 如果在循环神经网络模型中增加隐藏层的数量会发生什么？能使模型正常工作吗？
+3. 尝试使用循环神经网络实现 :numref:`sec_sequence`\ 的自回归模型。
