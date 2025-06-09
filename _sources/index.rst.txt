@@ -18,7 +18,6 @@
    :maxdepth: 2
    :numbered:
 
-   chapter_appendix-tools-for-deep-learning/index
    chapter_introduction/index
    chapter_preliminaries/index
    chapter_linear-networks/index
@@ -34,6 +33,7 @@
    chapter_computer-vision/index
    chapter_natural-language-processing-pretraining/index
    chapter_natural-language-processing-applications/index
+   chapter_appendix-tools-for-deep-learning/index
 
 .. toctree::
    :maxdepth: 1

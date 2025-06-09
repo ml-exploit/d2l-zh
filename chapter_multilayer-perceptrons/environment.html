@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     
-    <title>5.9. 环境和分布偏移 &#8212; 动手学深度学习 2.0.0 documentation</title>
+    <title>4.9. 环境和分布偏移 &#8212; 动手学深度学习 2.0.0 documentation</title>
 
     <link rel="stylesheet" href="../_static/material-design-lite-1.3.0/material.blue-deep_orange.min.css" type="text/css" />
     <link rel="stylesheet" href="../_static/sphinx_materialdesign_theme.css" type="text/css" />
@@ -29,16 +29,16 @@
     <link rel="shortcut icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="5.10. 实战Kaggle比赛：预测房价" href="kaggle-house-price.html" />
-    <link rel="prev" title="5.8. 数值稳定性和模型初始化" href="numerical-stability-and-init.html" /> 
+    <link rel="next" title="4.10. 实战Kaggle比赛：预测房价" href="kaggle-house-price.html" />
+    <link rel="prev" title="4.8. 数值稳定性和模型初始化" href="numerical-stability-and-init.html" /> 
   </head>
 <body>
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-drawer"><header class="mdl-layout__header mdl-layout__header--waterfall ">
     <div class="mdl-layout__header-row">
         
         <nav class="mdl-navigation breadcrumb">
-            <a class="mdl-navigation__link" href="index.html"><span class="section-number">5. </span>多层感知机</a><i class="material-icons">navigate_next</i>
-            <a class="mdl-navigation__link is-active"><span class="section-number">5.9. </span>环境和分布偏移</a>
+            <a class="mdl-navigation__link" href="index.html"><span class="section-number">4. </span>多层感知机</a><i class="material-icons">navigate_next</i>
+            <a class="mdl-navigation__link is-active"><span class="section-number">4.9. </span>环境和分布偏移</a>
         </nav>
         <div class="mdl-layout-spacer"></div>
         <nav class="mdl-navigation">
@@ -126,118 +126,111 @@ Show Source
 <li class="toctree-l1"><a class="reference internal" href="../chapter_notation/index.html">符号</a></li>
 </ul>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../chapter_appendix-tools-for-deep-learning/index.html">1. Appendix: Tools for Deep Learning</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_appendix-tools-for-deep-learning/jupyter.html">1.1. 使用Jupyter Notebook</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_appendix-tools-for-deep-learning/sagemaker.html">1.2. 使用Amazon SageMaker</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_appendix-tools-for-deep-learning/aws.html">1.3. 使用Amazon EC2实例</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_appendix-tools-for-deep-learning/selecting-servers-gpus.html">1.4. 选择服务器和GPU</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_appendix-tools-for-deep-learning/contributing.html">1.5. 为本书做贡献</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_appendix-tools-for-deep-learning/utils.html">1.6. Utility Functions and Classes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_appendix-tools-for-deep-learning/d2l.html">1.7. <code class="docutils literal notranslate"><span class="pre">d2l</span></code> API 文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter_introduction/index.html">1. 引言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter_preliminaries/index.html">2. 预备知识</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_preliminaries/ndarray.html">2.1. 数据操作</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_preliminaries/pandas.html">2.2. 数据预处理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_preliminaries/linear-algebra.html">2.3. 线性代数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_preliminaries/calculus.html">2.4. 微积分</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_preliminaries/autograd.html">2.5. 自动微分</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_preliminaries/probability.html">2.6. 概率</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_preliminaries/lookup-api.html">2.7. 查阅文档</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../chapter_introduction/index.html">2. 引言</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../chapter_preliminaries/index.html">3. 预备知识</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_preliminaries/ndarray.html">3.1. 数据操作</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_preliminaries/pandas.html">3.2. 数据预处理</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_preliminaries/linear-algebra.html">3.3. 线性代数</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_preliminaries/calculus.html">3.4. 微积分</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_preliminaries/autograd.html">3.5. 自动微分</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_preliminaries/probability.html">3.6. 概率</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_preliminaries/lookup-api.html">3.7. 查阅文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter_linear-networks/index.html">3. 线性神经网络</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_linear-networks/linear-regression.html">3.1. 线性回归</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_linear-networks/linear-regression-scratch.html">3.2. 线性回归的从零开始实现</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_linear-networks/linear-regression-concise.html">3.3. 线性回归的简洁实现</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_linear-networks/softmax-regression.html">3.4. softmax回归</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_linear-networks/image-classification-dataset.html">3.5. 图像分类数据集</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_linear-networks/softmax-regression-scratch.html">3.6. softmax回归的从零开始实现</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_linear-networks/softmax-regression-concise.html">3.7. softmax回归的简洁实现</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../chapter_linear-networks/index.html">4. 线性神经网络</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_linear-networks/linear-regression.html">4.1. 线性回归</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_linear-networks/linear-regression-scratch.html">4.2. 线性回归的从零开始实现</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_linear-networks/linear-regression-concise.html">4.3. 线性回归的简洁实现</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_linear-networks/softmax-regression.html">4.4. softmax回归</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_linear-networks/image-classification-dataset.html">4.5. 图像分类数据集</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_linear-networks/softmax-regression-scratch.html">4.6. softmax回归的从零开始实现</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_linear-networks/softmax-regression-concise.html">4.7. softmax回归的简洁实现</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">4. 多层感知机</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="mlp.html">4.1. 多层感知机</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mlp-scratch.html">4.2. 多层感知机的从零开始实现</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mlp-concise.html">4.3. 多层感知机的简洁实现</a></li>
+<li class="toctree-l2"><a class="reference internal" href="underfit-overfit.html">4.4. 模型选择、欠拟合和过拟合</a></li>
+<li class="toctree-l2"><a class="reference internal" href="weight-decay.html">4.5. 权重衰减</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dropout.html">4.6. 暂退法（Dropout）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="backprop.html">4.7. 前向传播、反向传播和计算图</a></li>
+<li class="toctree-l2"><a class="reference internal" href="numerical-stability-and-init.html">4.8. 数值稳定性和模型初始化</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">4.9. 环境和分布偏移</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kaggle-house-price.html">4.10. 实战Kaggle比赛：预测房价</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">5. 多层感知机</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="mlp.html">5.1. 多层感知机</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mlp-scratch.html">5.2. 多层感知机的从零开始实现</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mlp-concise.html">5.3. 多层感知机的简洁实现</a></li>
-<li class="toctree-l2"><a class="reference internal" href="underfit-overfit.html">5.4. 模型选择、欠拟合和过拟合</a></li>
-<li class="toctree-l2"><a class="reference internal" href="weight-decay.html">5.5. 权重衰减</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dropout.html">5.6. 暂退法（Dropout）</a></li>
-<li class="toctree-l2"><a class="reference internal" href="backprop.html">5.7. 前向传播、反向传播和计算图</a></li>
-<li class="toctree-l2"><a class="reference internal" href="numerical-stability-and-init.html">5.8. 数值稳定性和模型初始化</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">5.9. 环境和分布偏移</a></li>
-<li class="toctree-l2"><a class="reference internal" href="kaggle-house-price.html">5.10. 实战Kaggle比赛：预测房价</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter_deep-learning-computation/index.html">5. 深度学习计算</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_deep-learning-computation/model-construction.html">5.1. 层和块</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_deep-learning-computation/parameters.html">5.2. 参数管理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_deep-learning-computation/custom-layer.html">5.3. 自定义层</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_deep-learning-computation/read-write.html">5.4. 读写文件</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../chapter_deep-learning-computation/index.html">6. 深度学习计算</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_deep-learning-computation/model-construction.html">6.1. 层和块</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_deep-learning-computation/parameters.html">6.2. 参数管理</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_deep-learning-computation/custom-layer.html">6.3. 自定义层</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_deep-learning-computation/read-write.html">6.4. 读写文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter_convolutional-neural-networks/index.html">6. 卷积神经网络</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_convolutional-neural-networks/why-conv.html">6.1. 从全连接层到卷积</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_convolutional-neural-networks/conv-layer.html">6.2. 图像卷积</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_convolutional-neural-networks/padding-and-strides.html">6.3. 填充和步幅</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_convolutional-neural-networks/channels.html">6.4. 多输入多输出通道</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_convolutional-neural-networks/pooling.html">6.5. 汇聚层</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_convolutional-neural-networks/lenet.html">6.6. 卷积神经网络（LeNet）</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../chapter_convolutional-neural-networks/index.html">7. 卷积神经网络</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_convolutional-neural-networks/why-conv.html">7.1. 从全连接层到卷积</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_convolutional-neural-networks/conv-layer.html">7.2. 图像卷积</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_convolutional-neural-networks/padding-and-strides.html">7.3. 填充和步幅</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_convolutional-neural-networks/channels.html">7.4. 多输入多输出通道</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_convolutional-neural-networks/pooling.html">7.5. 汇聚层</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_convolutional-neural-networks/lenet.html">7.6. 卷积神经网络（LeNet）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter_convolutional-modern/index.html">7. 现代卷积神经网络</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_convolutional-modern/alexnet.html">7.1. 深度卷积神经网络（AlexNet）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_convolutional-modern/vgg.html">7.2. 使用块的网络（VGG）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_convolutional-modern/nin.html">7.3. 网络中的网络（NiN）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_convolutional-modern/googlenet.html">7.4. 含并行连结的网络（GoogLeNet）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_convolutional-modern/batch-norm.html">7.5. 批量规范化</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_convolutional-modern/resnet.html">7.6. 残差网络（ResNet）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_convolutional-modern/densenet.html">7.7. 稠密连接网络（DenseNet）</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../chapter_convolutional-modern/index.html">8. 现代卷积神经网络</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_convolutional-modern/alexnet.html">8.1. 深度卷积神经网络（AlexNet）</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_convolutional-modern/vgg.html">8.2. 使用块的网络（VGG）</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_convolutional-modern/nin.html">8.3. 网络中的网络（NiN）</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_convolutional-modern/googlenet.html">8.4. 含并行连结的网络（GoogLeNet）</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_convolutional-modern/batch-norm.html">8.5. 批量规范化</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_convolutional-modern/resnet.html">8.6. 残差网络（ResNet）</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_convolutional-modern/densenet.html">8.7. 稠密连接网络（DenseNet）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter_recurrent-neural-networks/index.html">8. 循环神经网络</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_recurrent-neural-networks/sequence.html">8.1. 序列模型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_recurrent-neural-networks/text-preprocessing.html">8.2. 文本预处理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_recurrent-neural-networks/language-models-and-dataset.html">8.3. 语言模型和数据集</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_recurrent-neural-networks/rnn.html">8.4. 循环神经网络</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_recurrent-neural-networks/rnn-scratch.html">8.5. 循环神经网络的从零开始实现</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_recurrent-neural-networks/rnn-concise.html">8.6. 循环神经网络的简洁实现</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_recurrent-neural-networks/bptt.html">8.7. 通过时间反向传播</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../chapter_recurrent-neural-networks/index.html">9. 循环神经网络</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_recurrent-neural-networks/sequence.html">9.1. 序列模型</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_recurrent-neural-networks/text-preprocessing.html">9.2. 文本预处理</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_recurrent-neural-networks/language-models-and-dataset.html">9.3. 语言模型和数据集</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_recurrent-neural-networks/rnn.html">9.4. 循环神经网络</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_recurrent-neural-networks/rnn-scratch.html">9.5. 循环神经网络的从零开始实现</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_recurrent-neural-networks/rnn-concise.html">9.6. 循环神经网络的简洁实现</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_recurrent-neural-networks/bptt.html">9.7. 通过时间反向传播</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter_recurrent-modern/index.html">9. 现代循环神经网络</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_recurrent-modern/gru.html">9.1. 门控循环单元（GRU）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_recurrent-modern/lstm.html">9.2. 长短期记忆网络（LSTM）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_recurrent-modern/deep-rnn.html">9.3. 深度循环神经网络</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_recurrent-modern/bi-rnn.html">9.4. 双向循环神经网络</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_recurrent-modern/machine-translation-and-dataset.html">9.5. 机器翻译与数据集</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_recurrent-modern/encoder-decoder.html">9.6. 编码器-解码器架构</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_recurrent-modern/seq2seq.html">9.7. 序列到序列学习（seq2seq）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_recurrent-modern/beam-search.html">9.8. 束搜索</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../chapter_recurrent-modern/index.html">10. 现代循环神经网络</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_recurrent-modern/gru.html">10.1. 门控循环单元（GRU）</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_recurrent-modern/lstm.html">10.2. 长短期记忆网络（LSTM）</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_recurrent-modern/deep-rnn.html">10.3. 深度循环神经网络</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_recurrent-modern/bi-rnn.html">10.4. 双向循环神经网络</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_recurrent-modern/machine-translation-and-dataset.html">10.5. 机器翻译与数据集</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_recurrent-modern/encoder-decoder.html">10.6. 编码器-解码器架构</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_recurrent-modern/seq2seq.html">10.7. 序列到序列学习（seq2seq）</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_recurrent-modern/beam-search.html">10.8. 束搜索</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter_attention-mechanisms/index.html">10. 注意力机制</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_attention-mechanisms/attention-cues.html">10.1. 注意力提示</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_attention-mechanisms/nadaraya-waston.html">10.2. 注意力汇聚：Nadaraya-Watson 核回归</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_attention-mechanisms/attention-scoring-functions.html">10.3. 注意力评分函数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_attention-mechanisms/bahdanau-attention.html">10.4. Bahdanau 注意力</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_attention-mechanisms/multihead-attention.html">10.5. 多头注意力</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_attention-mechanisms/self-attention-and-positional-encoding.html">10.6. 自注意力和位置编码</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_attention-mechanisms/transformer.html">10.7. Transformer</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../chapter_attention-mechanisms/index.html">11. 注意力机制</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_attention-mechanisms/attention-cues.html">11.1. 注意力提示</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_attention-mechanisms/nadaraya-waston.html">11.2. 注意力汇聚：Nadaraya-Watson 核回归</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_attention-mechanisms/attention-scoring-functions.html">11.3. 注意力评分函数</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_attention-mechanisms/bahdanau-attention.html">11.4. Bahdanau 注意力</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_attention-mechanisms/multihead-attention.html">11.5. 多头注意力</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_attention-mechanisms/self-attention-and-positional-encoding.html">11.6. 自注意力和位置编码</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_attention-mechanisms/transformer.html">11.7. Transformer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter_optimization/index.html">11. 优化算法</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/optimization-intro.html">11.1. 优化和深度学习</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/convexity.html">11.2. 凸性</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/gd.html">11.3. 梯度下降</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/sgd.html">11.4. 随机梯度下降</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/minibatch-sgd.html">11.5. 小批量随机梯度下降</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/momentum.html">11.6. 动量法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/adagrad.html">11.7. AdaGrad算法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/rmsprop.html">11.8. RMSProp算法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/adadelta.html">11.9. Adadelta</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/adam.html">11.10. Adam算法</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../chapter_optimization/index.html">12. 优化算法</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/optimization-intro.html">12.1. 优化和深度学习</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/convexity.html">12.2. 凸性</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/gd.html">12.3. 梯度下降</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/sgd.html">12.4. 随机梯度下降</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/minibatch-sgd.html">12.5. 小批量随机梯度下降</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/momentum.html">12.6. 动量法</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/adagrad.html">12.7. AdaGrad算法</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/rmsprop.html">12.8. RMSProp算法</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/adadelta.html">12.9. Adadelta</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/adam.html">12.10. Adam算法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter_computational-performance/index.html">12. 计算性能</a><ul class="simple">
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../chapter_computer-vision/index.html">13. 计算机视觉</a><ul>
@@ -276,6 +269,16 @@ Show Source
 <li class="toctree-l2"><a class="reference internal" href="../chapter_natural-language-processing-applications/natural-language-inference-attention.html">15.4. 自然语言推断：使用注意力</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter_natural-language-processing-applications/finetuning-bert.html">15.5. 针对序列级和词元级应用微调BERT</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter_natural-language-processing-applications/natural-language-inference-bert.html">15.6. 自然语言推断：微调BERT</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter_appendix-tools-for-deep-learning/index.html">16. Appendix: Tools for Deep Learning</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_appendix-tools-for-deep-learning/jupyter.html">16.1. 使用Jupyter Notebook</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_appendix-tools-for-deep-learning/sagemaker.html">16.2. 使用Amazon SageMaker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_appendix-tools-for-deep-learning/aws.html">16.3. 使用Amazon EC2实例</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_appendix-tools-for-deep-learning/selecting-servers-gpus.html">16.4. 选择服务器和GPU</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_appendix-tools-for-deep-learning/contributing.html">16.5. 为本书做贡献</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_appendix-tools-for-deep-learning/utils.html">16.6. Utility Functions and Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_appendix-tools-for-deep-learning/d2l.html">16.7. <code class="docutils literal notranslate"><span class="pre">d2l</span></code> API 文档</a></li>
 </ul>
 </li>
 </ul>
@@ -310,118 +313,111 @@ Show Source
 <li class="toctree-l1"><a class="reference internal" href="../chapter_notation/index.html">符号</a></li>
 </ul>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../chapter_appendix-tools-for-deep-learning/index.html">1. Appendix: Tools for Deep Learning</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_appendix-tools-for-deep-learning/jupyter.html">1.1. 使用Jupyter Notebook</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_appendix-tools-for-deep-learning/sagemaker.html">1.2. 使用Amazon SageMaker</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_appendix-tools-for-deep-learning/aws.html">1.3. 使用Amazon EC2实例</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_appendix-tools-for-deep-learning/selecting-servers-gpus.html">1.4. 选择服务器和GPU</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_appendix-tools-for-deep-learning/contributing.html">1.5. 为本书做贡献</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_appendix-tools-for-deep-learning/utils.html">1.6. Utility Functions and Classes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_appendix-tools-for-deep-learning/d2l.html">1.7. <code class="docutils literal notranslate"><span class="pre">d2l</span></code> API 文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter_introduction/index.html">1. 引言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter_preliminaries/index.html">2. 预备知识</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_preliminaries/ndarray.html">2.1. 数据操作</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_preliminaries/pandas.html">2.2. 数据预处理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_preliminaries/linear-algebra.html">2.3. 线性代数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_preliminaries/calculus.html">2.4. 微积分</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_preliminaries/autograd.html">2.5. 自动微分</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_preliminaries/probability.html">2.6. 概率</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_preliminaries/lookup-api.html">2.7. 查阅文档</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../chapter_introduction/index.html">2. 引言</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../chapter_preliminaries/index.html">3. 预备知识</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_preliminaries/ndarray.html">3.1. 数据操作</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_preliminaries/pandas.html">3.2. 数据预处理</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_preliminaries/linear-algebra.html">3.3. 线性代数</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_preliminaries/calculus.html">3.4. 微积分</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_preliminaries/autograd.html">3.5. 自动微分</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_preliminaries/probability.html">3.6. 概率</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_preliminaries/lookup-api.html">3.7. 查阅文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter_linear-networks/index.html">3. 线性神经网络</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_linear-networks/linear-regression.html">3.1. 线性回归</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_linear-networks/linear-regression-scratch.html">3.2. 线性回归的从零开始实现</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_linear-networks/linear-regression-concise.html">3.3. 线性回归的简洁实现</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_linear-networks/softmax-regression.html">3.4. softmax回归</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_linear-networks/image-classification-dataset.html">3.5. 图像分类数据集</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_linear-networks/softmax-regression-scratch.html">3.6. softmax回归的从零开始实现</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_linear-networks/softmax-regression-concise.html">3.7. softmax回归的简洁实现</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../chapter_linear-networks/index.html">4. 线性神经网络</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_linear-networks/linear-regression.html">4.1. 线性回归</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_linear-networks/linear-regression-scratch.html">4.2. 线性回归的从零开始实现</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_linear-networks/linear-regression-concise.html">4.3. 线性回归的简洁实现</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_linear-networks/softmax-regression.html">4.4. softmax回归</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_linear-networks/image-classification-dataset.html">4.5. 图像分类数据集</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_linear-networks/softmax-regression-scratch.html">4.6. softmax回归的从零开始实现</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_linear-networks/softmax-regression-concise.html">4.7. softmax回归的简洁实现</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">4. 多层感知机</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="mlp.html">4.1. 多层感知机</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mlp-scratch.html">4.2. 多层感知机的从零开始实现</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mlp-concise.html">4.3. 多层感知机的简洁实现</a></li>
+<li class="toctree-l2"><a class="reference internal" href="underfit-overfit.html">4.4. 模型选择、欠拟合和过拟合</a></li>
+<li class="toctree-l2"><a class="reference internal" href="weight-decay.html">4.5. 权重衰减</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dropout.html">4.6. 暂退法（Dropout）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="backprop.html">4.7. 前向传播、反向传播和计算图</a></li>
+<li class="toctree-l2"><a class="reference internal" href="numerical-stability-and-init.html">4.8. 数值稳定性和模型初始化</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">4.9. 环境和分布偏移</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kaggle-house-price.html">4.10. 实战Kaggle比赛：预测房价</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">5. 多层感知机</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="mlp.html">5.1. 多层感知机</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mlp-scratch.html">5.2. 多层感知机的从零开始实现</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mlp-concise.html">5.3. 多层感知机的简洁实现</a></li>
-<li class="toctree-l2"><a class="reference internal" href="underfit-overfit.html">5.4. 模型选择、欠拟合和过拟合</a></li>
-<li class="toctree-l2"><a class="reference internal" href="weight-decay.html">5.5. 权重衰减</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dropout.html">5.6. 暂退法（Dropout）</a></li>
-<li class="toctree-l2"><a class="reference internal" href="backprop.html">5.7. 前向传播、反向传播和计算图</a></li>
-<li class="toctree-l2"><a class="reference internal" href="numerical-stability-and-init.html">5.8. 数值稳定性和模型初始化</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">5.9. 环境和分布偏移</a></li>
-<li class="toctree-l2"><a class="reference internal" href="kaggle-house-price.html">5.10. 实战Kaggle比赛：预测房价</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter_deep-learning-computation/index.html">5. 深度学习计算</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_deep-learning-computation/model-construction.html">5.1. 层和块</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_deep-learning-computation/parameters.html">5.2. 参数管理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_deep-learning-computation/custom-layer.html">5.3. 自定义层</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_deep-learning-computation/read-write.html">5.4. 读写文件</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../chapter_deep-learning-computation/index.html">6. 深度学习计算</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_deep-learning-computation/model-construction.html">6.1. 层和块</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_deep-learning-computation/parameters.html">6.2. 参数管理</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_deep-learning-computation/custom-layer.html">6.3. 自定义层</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_deep-learning-computation/read-write.html">6.4. 读写文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter_convolutional-neural-networks/index.html">6. 卷积神经网络</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_convolutional-neural-networks/why-conv.html">6.1. 从全连接层到卷积</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_convolutional-neural-networks/conv-layer.html">6.2. 图像卷积</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_convolutional-neural-networks/padding-and-strides.html">6.3. 填充和步幅</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_convolutional-neural-networks/channels.html">6.4. 多输入多输出通道</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_convolutional-neural-networks/pooling.html">6.5. 汇聚层</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_convolutional-neural-networks/lenet.html">6.6. 卷积神经网络（LeNet）</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../chapter_convolutional-neural-networks/index.html">7. 卷积神经网络</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_convolutional-neural-networks/why-conv.html">7.1. 从全连接层到卷积</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_convolutional-neural-networks/conv-layer.html">7.2. 图像卷积</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_convolutional-neural-networks/padding-and-strides.html">7.3. 填充和步幅</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_convolutional-neural-networks/channels.html">7.4. 多输入多输出通道</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_convolutional-neural-networks/pooling.html">7.5. 汇聚层</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_convolutional-neural-networks/lenet.html">7.6. 卷积神经网络（LeNet）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter_convolutional-modern/index.html">7. 现代卷积神经网络</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_convolutional-modern/alexnet.html">7.1. 深度卷积神经网络（AlexNet）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_convolutional-modern/vgg.html">7.2. 使用块的网络（VGG）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_convolutional-modern/nin.html">7.3. 网络中的网络（NiN）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_convolutional-modern/googlenet.html">7.4. 含并行连结的网络（GoogLeNet）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_convolutional-modern/batch-norm.html">7.5. 批量规范化</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_convolutional-modern/resnet.html">7.6. 残差网络（ResNet）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_convolutional-modern/densenet.html">7.7. 稠密连接网络（DenseNet）</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../chapter_convolutional-modern/index.html">8. 现代卷积神经网络</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_convolutional-modern/alexnet.html">8.1. 深度卷积神经网络（AlexNet）</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_convolutional-modern/vgg.html">8.2. 使用块的网络（VGG）</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_convolutional-modern/nin.html">8.3. 网络中的网络（NiN）</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_convolutional-modern/googlenet.html">8.4. 含并行连结的网络（GoogLeNet）</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_convolutional-modern/batch-norm.html">8.5. 批量规范化</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_convolutional-modern/resnet.html">8.6. 残差网络（ResNet）</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_convolutional-modern/densenet.html">8.7. 稠密连接网络（DenseNet）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter_recurrent-neural-networks/index.html">8. 循环神经网络</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_recurrent-neural-networks/sequence.html">8.1. 序列模型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_recurrent-neural-networks/text-preprocessing.html">8.2. 文本预处理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_recurrent-neural-networks/language-models-and-dataset.html">8.3. 语言模型和数据集</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_recurrent-neural-networks/rnn.html">8.4. 循环神经网络</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_recurrent-neural-networks/rnn-scratch.html">8.5. 循环神经网络的从零开始实现</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_recurrent-neural-networks/rnn-concise.html">8.6. 循环神经网络的简洁实现</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_recurrent-neural-networks/bptt.html">8.7. 通过时间反向传播</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../chapter_recurrent-neural-networks/index.html">9. 循环神经网络</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_recurrent-neural-networks/sequence.html">9.1. 序列模型</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_recurrent-neural-networks/text-preprocessing.html">9.2. 文本预处理</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_recurrent-neural-networks/language-models-and-dataset.html">9.3. 语言模型和数据集</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_recurrent-neural-networks/rnn.html">9.4. 循环神经网络</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_recurrent-neural-networks/rnn-scratch.html">9.5. 循环神经网络的从零开始实现</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_recurrent-neural-networks/rnn-concise.html">9.6. 循环神经网络的简洁实现</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_recurrent-neural-networks/bptt.html">9.7. 通过时间反向传播</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter_recurrent-modern/index.html">9. 现代循环神经网络</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_recurrent-modern/gru.html">9.1. 门控循环单元（GRU）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_recurrent-modern/lstm.html">9.2. 长短期记忆网络（LSTM）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_recurrent-modern/deep-rnn.html">9.3. 深度循环神经网络</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_recurrent-modern/bi-rnn.html">9.4. 双向循环神经网络</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_recurrent-modern/machine-translation-and-dataset.html">9.5. 机器翻译与数据集</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_recurrent-modern/encoder-decoder.html">9.6. 编码器-解码器架构</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_recurrent-modern/seq2seq.html">9.7. 序列到序列学习（seq2seq）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_recurrent-modern/beam-search.html">9.8. 束搜索</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../chapter_recurrent-modern/index.html">10. 现代循环神经网络</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_recurrent-modern/gru.html">10.1. 门控循环单元（GRU）</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_recurrent-modern/lstm.html">10.2. 长短期记忆网络（LSTM）</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_recurrent-modern/deep-rnn.html">10.3. 深度循环神经网络</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_recurrent-modern/bi-rnn.html">10.4. 双向循环神经网络</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_recurrent-modern/machine-translation-and-dataset.html">10.5. 机器翻译与数据集</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_recurrent-modern/encoder-decoder.html">10.6. 编码器-解码器架构</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_recurrent-modern/seq2seq.html">10.7. 序列到序列学习（seq2seq）</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_recurrent-modern/beam-search.html">10.8. 束搜索</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter_attention-mechanisms/index.html">10. 注意力机制</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_attention-mechanisms/attention-cues.html">10.1. 注意力提示</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_attention-mechanisms/nadaraya-waston.html">10.2. 注意力汇聚：Nadaraya-Watson 核回归</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_attention-mechanisms/attention-scoring-functions.html">10.3. 注意力评分函数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_attention-mechanisms/bahdanau-attention.html">10.4. Bahdanau 注意力</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_attention-mechanisms/multihead-attention.html">10.5. 多头注意力</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_attention-mechanisms/self-attention-and-positional-encoding.html">10.6. 自注意力和位置编码</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_attention-mechanisms/transformer.html">10.7. Transformer</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../chapter_attention-mechanisms/index.html">11. 注意力机制</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_attention-mechanisms/attention-cues.html">11.1. 注意力提示</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_attention-mechanisms/nadaraya-waston.html">11.2. 注意力汇聚：Nadaraya-Watson 核回归</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_attention-mechanisms/attention-scoring-functions.html">11.3. 注意力评分函数</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_attention-mechanisms/bahdanau-attention.html">11.4. Bahdanau 注意力</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_attention-mechanisms/multihead-attention.html">11.5. 多头注意力</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_attention-mechanisms/self-attention-and-positional-encoding.html">11.6. 自注意力和位置编码</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_attention-mechanisms/transformer.html">11.7. Transformer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter_optimization/index.html">11. 优化算法</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/optimization-intro.html">11.1. 优化和深度学习</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/convexity.html">11.2. 凸性</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/gd.html">11.3. 梯度下降</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/sgd.html">11.4. 随机梯度下降</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/minibatch-sgd.html">11.5. 小批量随机梯度下降</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/momentum.html">11.6. 动量法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/adagrad.html">11.7. AdaGrad算法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/rmsprop.html">11.8. RMSProp算法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/adadelta.html">11.9. Adadelta</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/adam.html">11.10. Adam算法</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../chapter_optimization/index.html">12. 优化算法</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/optimization-intro.html">12.1. 优化和深度学习</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/convexity.html">12.2. 凸性</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/gd.html">12.3. 梯度下降</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/sgd.html">12.4. 随机梯度下降</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/minibatch-sgd.html">12.5. 小批量随机梯度下降</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/momentum.html">12.6. 动量法</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/adagrad.html">12.7. AdaGrad算法</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/rmsprop.html">12.8. RMSProp算法</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/adadelta.html">12.9. Adadelta</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/adam.html">12.10. Adam算法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter_computational-performance/index.html">12. 计算性能</a><ul class="simple">
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../chapter_computer-vision/index.html">13. 计算机视觉</a><ul>
@@ -462,6 +458,16 @@ Show Source
 <li class="toctree-l2"><a class="reference internal" href="../chapter_natural-language-processing-applications/natural-language-inference-bert.html">15.6. 自然语言推断：微调BERT</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter_appendix-tools-for-deep-learning/index.html">16. Appendix: Tools for Deep Learning</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_appendix-tools-for-deep-learning/jupyter.html">16.1. 使用Jupyter Notebook</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_appendix-tools-for-deep-learning/sagemaker.html">16.2. 使用Amazon SageMaker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_appendix-tools-for-deep-learning/aws.html">16.3. 使用Amazon EC2实例</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_appendix-tools-for-deep-learning/selecting-servers-gpus.html">16.4. 选择服务器和GPU</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_appendix-tools-for-deep-learning/contributing.html">16.5. 为本书做贡献</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_appendix-tools-for-deep-learning/utils.html">16.6. Utility Functions and Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_appendix-tools-for-deep-learning/d2l.html">16.7. <code class="docutils literal notranslate"><span class="pre">d2l</span></code> API 文档</a></li>
+</ul>
+</li>
 </ul>
 
             </nav>
@@ -474,7 +480,7 @@ Show Source
         <div class="page-content" role="main">
         
   <section id="id1">
-<h1><span class="section-number">5.9. </span>环境和分布偏移<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h1>
+<h1><span class="section-number">4.9. </span>环境和分布偏移<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h1>
 <p>前面我们学习了许多机器学习的实际应用，将模型拟合各种数据集。
 然而，我们从来没有想过数据最初从哪里来？以及我们计划最终如何处理模型的输出？
 通常情况下，开发人员会拥有一些数据且急于开发模型，而不关注这些基本问题。</p>
@@ -496,7 +502,7 @@ Show Source
 有些解决方案很简单（要求“正确”的数据），有些在技术上很困难（实施强化学习系统），
 还有一些解决方案要求我们完全跳出统计预测，解决一些棘手的、与算法伦理应用有关的哲学问题。</p>
 <section id="id2">
-<h2><span class="section-number">5.9.1. </span>分布偏移的类型<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">4.9.1. </span>分布偏移的类型<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h2>
 <p>首先，我们考虑数据分布可能发生变化的各种方式，以及为挽救模型性能可能采取的措施。
 在一个经典的情景中，假设训练数据是从某个分布<span class="math notranslate nohighlight">\(p_S(\mathbf{x},y)\)</span>中采样的，
 但是测试数据将包含从不同分布<span class="math notranslate nohighlight">\(p_T(\mathbf{x},y)\)</span>中抽取的未标记样本。
@@ -512,7 +518,7 @@ Show Source
 <p>幸运的是，在对未来我们的数据可能发生变化的一些限制性假设下，
 有些算法可以检测这种偏移，甚至可以动态调整，提高原始分类器的精度。</p>
 <section id="id3">
-<h3><span class="section-number">5.9.1.1. </span>协变量偏移<a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h3>
+<h3><span class="section-number">4.9.1.1. </span>协变量偏移<a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h3>
 <p>在不同分布偏移中，协变量偏移可能是最为广泛研究的。
 这里我们假设：虽然输入的分布可能随时间而改变，
 但标签函数（即条件分布<span class="math notranslate nohighlight">\(P(y \mid \mathbf{x})\)</span>）没有改变。
@@ -521,16 +527,16 @@ Show Source
 虽然有时我们可以在不引用因果关系的情况下对分布偏移进行推断，
 但在我们认为<span class="math notranslate nohighlight">\(\mathbf{x}\)</span>导致<span class="math notranslate nohighlight">\(y\)</span>的情况下，协变量偏移是一种自然假设。</p>
 <p>考虑一下区分猫和狗的问题：训练数据包括
-<a class="reference internal" href="#fig-cat-dog-train"><span class="std std-numref">图5.9.1</span></a>中的图像。</p>
+<a class="reference internal" href="#fig-cat-dog-train"><span class="std std-numref">图4.9.1</span></a>中的图像。</p>
 <figure class="align-default" id="id27">
 <span id="fig-cat-dog-train"></span><img alt="../_images/cat-dog-train.svg" src="../_images/cat-dog-train.svg" /><figcaption>
-<p><span class="caption-number">图5.9.1 </span><span class="caption-text">区分猫和狗的训练数据</span><a class="headerlink" href="#id27" title="Permalink to this image">¶</a></p>
+<p><span class="caption-number">图4.9.1 </span><span class="caption-text">区分猫和狗的训练数据</span><a class="headerlink" href="#id27" title="Permalink to this image">¶</a></p>
 </figcaption>
 </figure>
-<p>在测试时，我们被要求对 <a class="reference internal" href="#fig-cat-dog-test"><span class="std std-numref">图5.9.2</span></a>中的图像进行分类。</p>
+<p>在测试时，我们被要求对 <a class="reference internal" href="#fig-cat-dog-test"><span class="std std-numref">图4.9.2</span></a>中的图像进行分类。</p>
 <figure class="align-default" id="id28">
 <span id="fig-cat-dog-test"></span><img alt="../_images/cat-dog-test.svg" src="../_images/cat-dog-test.svg" /><figcaption>
-<p><span class="caption-number">图5.9.2 </span><span class="caption-text">区分猫和狗的测试数据</span><a class="headerlink" href="#id28" title="Permalink to this image">¶</a></p>
+<p><span class="caption-number">图4.9.2 </span><span class="caption-text">区分猫和狗的测试数据</span><a class="headerlink" href="#id28" title="Permalink to this image">¶</a></p>
 </figcaption>
 </figure>
 <p>训练集由真实照片组成，而测试集只包含卡通图片。
@@ -538,7 +544,7 @@ Show Source
 如果没有方法来适应新的领域，可能会有麻烦。</p>
 </section>
 <section id="id4">
-<h3><span class="section-number">5.9.1.2. </span>标签偏移<a class="headerlink" href="#id4" title="Permalink to this heading">¶</a></h3>
+<h3><span class="section-number">4.9.1.2. </span>标签偏移<a class="headerlink" href="#id4" title="Permalink to this heading">¶</a></h3>
 <p><em>标签偏移</em>（label shift）描述了与协变量偏移相反的问题。
 这里我们假设标签边缘概率<span class="math notranslate nohighlight">\(P(y)\)</span>可以改变，
 但是类别条件分布<span class="math notranslate nohighlight">\(P(\mathbf{x} \mid y)\)</span>在不同的领域之间保持不变。
@@ -553,7 +559,7 @@ Show Source
 而不是像输入（通常是高维的）对象。</p>
 </section>
 <section id="id5">
-<h3><span class="section-number">5.9.1.3. </span>概念偏移<a class="headerlink" href="#id5" title="Permalink to this heading">¶</a></h3>
+<h3><span class="section-number">4.9.1.3. </span>概念偏移<a class="headerlink" href="#id5" title="Permalink to this heading">¶</a></h3>
 <p>我们也可能会遇到<em>概念偏移</em>（concept shift）：
 当标签的定义发生变化时，就会出现这种问题。
 这听起来很奇怪——一只猫就是一只猫，不是吗？
@@ -561,11 +567,11 @@ Show Source
 精神疾病的诊断标准、所谓的时髦、以及工作头衔等等，都是概念偏移的日常映射。
 事实证明，假如我们环游美国，根据所在的地理位置改变我们的数据来源，
 我们会发现关于“软饮”名称的分布发生了相当大的概念偏移， 如
-<a class="reference internal" href="#fig-popvssoda"><span class="std std-numref">图5.9.3</span></a> 所示。</p>
+<a class="reference internal" href="#fig-popvssoda"><span class="std std-numref">图4.9.3</span></a> 所示。</p>
 <figure class="align-default" id="id29">
 <span id="fig-popvssoda"></span><a class="reference internal image-reference" href="../_images/popvssoda.png"><img alt="../_images/popvssoda.png" src="../_images/popvssoda.png" style="width: 400px;" /></a>
 <figcaption>
-<p><span class="caption-number">图5.9.3 </span><span class="caption-text">美国软饮名称的概念偏移</span><a class="headerlink" href="#id29" title="Permalink to this image">¶</a></p>
+<p><span class="caption-number">图4.9.3 </span><span class="caption-text">美国软饮名称的概念偏移</span><a class="headerlink" href="#id29" title="Permalink to this image">¶</a></p>
 </figcaption>
 </figure>
 <p>如果我们要建立一个机器翻译系统，
@@ -575,10 +581,10 @@ Show Source
 </section>
 </section>
 <section id="id6">
-<h2><span class="section-number">5.9.2. </span>分布偏移示例<a class="headerlink" href="#id6" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">4.9.2. </span>分布偏移示例<a class="headerlink" href="#id6" title="Permalink to this heading">¶</a></h2>
 <p>在深入研究形式体系和算法之前，我们可以讨论一些协变量偏移或概念偏移可能并不明显的具体情况。</p>
 <section id="id7">
-<h3><span class="section-number">5.9.2.1. </span>医学诊断<a class="headerlink" href="#id7" title="Permalink to this heading">¶</a></h3>
+<h3><span class="section-number">4.9.2.1. </span>医学诊断<a class="headerlink" href="#id7" title="Permalink to this heading">¶</a></h3>
 <p>假设我们想设计一个检测癌症的算法，从健康人和病人那里收集数据，然后训练算法。
 它工作得很好，有很高的精度，然后我们得出了已经准备好在医疗诊断上取得成功的结论。
 请先别着急。</p>
@@ -597,7 +603,7 @@ Show Source
 简言之，他们浪费了一大笔钱。</p>
 </section>
 <section id="id8">
-<h3><span class="section-number">5.9.2.2. </span>自动驾驶汽车<a class="headerlink" href="#id8" title="Permalink to this heading">¶</a></h3>
+<h3><span class="section-number">4.9.2.2. </span>自动驾驶汽车<a class="headerlink" href="#id8" title="Permalink to this heading">¶</a></h3>
 <p>对于一家想利用机器学习来开发自动驾驶汽车的公司，一个关键部件是“路沿检测器”。
 由于真实的注释数据获取成本很高，他们想出了一个“聪明”的想法：
 将游戏渲染引擎中的合成数据用作额外的训练数据。
@@ -611,7 +617,7 @@ Show Source
 第一组照片是在清晨拍摄的，而第二组是在中午拍摄的。</p>
 </section>
 <section id="id9">
-<h3><span class="section-number">5.9.2.3. </span>非平稳分布<a class="headerlink" href="#id9" title="Permalink to this heading">¶</a></h3>
+<h3><span class="section-number">4.9.2.3. </span>非平稳分布<a class="headerlink" href="#id9" title="Permalink to this heading">¶</a></h3>
 <p>当分布变化缓慢并且模型没有得到充分更新时，就会出现更微妙的情况：
 <em>非平稳分布</em>（nonstationary distribution）。 以下是一些典型例子：</p>
 <ul class="simple">
@@ -621,7 +627,7 @@ Show Source
 </ul>
 </section>
 <section id="id10">
-<h3><span class="section-number">5.9.2.4. </span>更多轶事<a class="headerlink" href="#id10" title="Permalink to this heading">¶</a></h3>
+<h3><span class="section-number">4.9.2.4. </span>更多轶事<a class="headerlink" href="#id10" title="Permalink to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>建立一个人脸检测器，它在所有基准测试中都能很好地工作，但是它在测试数据上失败了：有问题的例子是人脸充满了整个图像的特写镜头（训练集中没有这样的数据）。</p></li>
 <li><p>为美国市场建立了一个网络搜索引擎，并希望将其部署到英国。</p></li>
@@ -630,33 +636,33 @@ Show Source
 </section>
 </section>
 <section id="id11">
-<h2><span class="section-number">5.9.3. </span>分布偏移纠正<a class="headerlink" href="#id11" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">4.9.3. </span>分布偏移纠正<a class="headerlink" href="#id11" title="Permalink to this heading">¶</a></h2>
 <p>正如我们所讨论的，在许多情况下训练和测试分布<span class="math notranslate nohighlight">\(P(\mathbf{x}, y)\)</span>是不同的。
 在一些情况下，我们很幸运，不管协变量、标签或概念如何发生偏移，模型都能正常工作。
 在另一些情况下，我们可以通过运用策略来应对这种偏移，从而做得更好。
 本节的其余部分将着重于应对这种偏移的技术细节。</p>
 <section id="subsec-empirical-risk-and-risk">
-<span id="id12"></span><h3><span class="section-number">5.9.3.1. </span>经验风险与实际风险<a class="headerlink" href="#subsec-empirical-risk-and-risk" title="Permalink to this heading">¶</a></h3>
+<span id="id12"></span><h3><span class="section-number">4.9.3.1. </span>经验风险与实际风险<a class="headerlink" href="#subsec-empirical-risk-and-risk" title="Permalink to this heading">¶</a></h3>
 <p>首先我们反思一下在模型训练期间到底发生了什么？
 训练数据<span class="math notranslate nohighlight">\(\{(\mathbf{x}_1, y_1), \ldots, (\mathbf{x}_n, y_n)\}\)</span>
 的特征和相关的标签经过迭代，在每一个小批量之后更新模型<span class="math notranslate nohighlight">\(f\)</span>的参数。
 为了简单起见，我们不考虑正则化，因此极大地降低了训练损失：</p>
 <div class="math notranslate nohighlight" id="equation-eq-empirical-risk-min">
-<span class="eqno">(5.9.1)<a class="headerlink" href="#equation-eq-empirical-risk-min" title="Permalink to this equation">¶</a></span>\[\mathop{\mathrm{minimize}}_f \frac{1}{n} \sum_{i=1}^n l(f(\mathbf{x}_i), y_i),\]</div>
+<span class="eqno">(4.9.1)<a class="headerlink" href="#equation-eq-empirical-risk-min" title="Permalink to this equation">¶</a></span>\[\mathop{\mathrm{minimize}}_f \frac{1}{n} \sum_{i=1}^n l(f(\mathbf{x}_i), y_i),\]</div>
 <p>其中<span class="math notranslate nohighlight">\(l\)</span>是损失函数，用来度量：
 给定标签<span class="math notranslate nohighlight">\(y_i\)</span>，预测<span class="math notranslate nohighlight">\(f(\mathbf{x}_i)\)</span>的“糟糕程度”。
-统计学家称 <a class="reference internal" href="#equation-eq-empirical-risk-min">(5.9.1)</a>中的这一项为经验风险。
+统计学家称 <a class="reference internal" href="#equation-eq-empirical-risk-min">(4.9.1)</a>中的这一项为经验风险。
 <em>经验风险</em>（empirical risk）是为了近似 <em>真实风险</em>（true risk），
 整个训练数据上的平均损失，即从其真实分布<span class="math notranslate nohighlight">\(p(\mathbf{x},y)\)</span>中
 抽取的所有数据的总体损失的期望值：</p>
 <div class="math notranslate nohighlight" id="equation-eq-true-risk">
-<span class="eqno">(5.9.2)<a class="headerlink" href="#equation-eq-true-risk" title="Permalink to this equation">¶</a></span>\[E_{p(\mathbf{x}, y)} [l(f(\mathbf{x}), y)] = \int\int l(f(\mathbf{x}), y) p(\mathbf{x}, y) \;d\mathbf{x}dy.\]</div>
+<span class="eqno">(4.9.2)<a class="headerlink" href="#equation-eq-true-risk" title="Permalink to this equation">¶</a></span>\[E_{p(\mathbf{x}, y)} [l(f(\mathbf{x}), y)] = \int\int l(f(\mathbf{x}), y) p(\mathbf{x}, y) \;d\mathbf{x}dy.\]</div>
 <p>然而在实践中，我们通常无法获得总体数据。 因此，<em>经验风险最小化</em>即在
-<a class="reference internal" href="#equation-eq-empirical-risk-min">(5.9.1)</a>中最小化经验风险，
+<a class="reference internal" href="#equation-eq-empirical-risk-min">(4.9.1)</a>中最小化经验风险，
 是一种实用的机器学习策略，希望能近似最小化真实风险。</p>
 </section>
 <section id="subsec-covariate-shift-correction">
-<span id="id13"></span><h3><span class="section-number">5.9.3.2. </span>协变量偏移纠正<a class="headerlink" href="#subsec-covariate-shift-correction" title="Permalink to this heading">¶</a></h3>
+<span id="id13"></span><h3><span class="section-number">4.9.3.2. </span>协变量偏移纠正<a class="headerlink" href="#subsec-covariate-shift-correction" title="Permalink to this heading">¶</a></h3>
 <p>假设对于带标签的数据<span class="math notranslate nohighlight">\((\mathbf{x}_i, y_i)\)</span>，
 我们要评估<span class="math notranslate nohighlight">\(P(y \mid \mathbf{x})\)</span>。
 然而观测值<span class="math notranslate nohighlight">\(\mathbf{x}_i\)</span>是从某些<em>源分布</em><span class="math notranslate nohighlight">\(q(\mathbf{x})\)</span>中得出的，
@@ -666,18 +672,18 @@ Show Source
 如果源分布<span class="math notranslate nohighlight">\(q(\mathbf{x})\)</span>是“错误的”，
 我们可以通过在真实风险的计算中，使用以下简单的恒等式来进行纠正：</p>
 <div class="math notranslate nohighlight" id="equation-chapter-multilayer-perceptrons-environment-0">
-<span class="eqno">(5.9.3)<a class="headerlink" href="#equation-chapter-multilayer-perceptrons-environment-0" title="Permalink to this equation">¶</a></span>\[\begin{aligned}
+<span class="eqno">(4.9.3)<a class="headerlink" href="#equation-chapter-multilayer-perceptrons-environment-0" title="Permalink to this equation">¶</a></span>\[\begin{aligned}
 \int\int l(f(\mathbf{x}), y) p(y \mid \mathbf{x})p(\mathbf{x}) \;d\mathbf{x}dy =
 \int\int l(f(\mathbf{x}), y) q(y \mid \mathbf{x})q(\mathbf{x})\frac{p(\mathbf{x})}{q(\mathbf{x})} \;d\mathbf{x}dy.
 \end{aligned}\]</div>
 <p>换句话说，我们需要根据数据来自正确分布与来自错误分布的概率之比，
 来重新衡量每个数据样本的权重：</p>
 <div class="math notranslate nohighlight" id="equation-chapter-multilayer-perceptrons-environment-1">
-<span class="eqno">(5.9.4)<a class="headerlink" href="#equation-chapter-multilayer-perceptrons-environment-1" title="Permalink to this equation">¶</a></span>\[\beta_i \stackrel{\mathrm{def}}{=} \frac{p(\mathbf{x}_i)}{q(\mathbf{x}_i)}.\]</div>
+<span class="eqno">(4.9.4)<a class="headerlink" href="#equation-chapter-multilayer-perceptrons-environment-1" title="Permalink to this equation">¶</a></span>\[\beta_i \stackrel{\mathrm{def}}{=} \frac{p(\mathbf{x}_i)}{q(\mathbf{x}_i)}.\]</div>
 <p>将权重<span class="math notranslate nohighlight">\(\beta_i\)</span>代入到每个数据样本<span class="math notranslate nohighlight">\((\mathbf{x}_i, y_i)\)</span>中，
 我们可以使用”加权经验风险最小化“来训练模型：</p>
 <div class="math notranslate nohighlight" id="equation-eq-weighted-empirical-risk-min">
-<span class="eqno">(5.9.5)<a class="headerlink" href="#equation-eq-weighted-empirical-risk-min" title="Permalink to this equation">¶</a></span>\[\mathop{\mathrm{minimize}}_f \frac{1}{n} \sum_{i=1}^n \beta_i l(f(\mathbf{x}_i), y_i).\]</div>
+<span class="eqno">(4.9.5)<a class="headerlink" href="#equation-eq-weighted-empirical-risk-min" title="Permalink to this equation">¶</a></span>\[\mathop{\mathrm{minimize}}_f \frac{1}{n} \sum_{i=1}^n \beta_i l(f(\mathbf{x}_i), y_i).\]</div>
 <p>由于不知道这个比率，我们需要估计它。
 有许多方法都可以用，包括一些花哨的算子理论方法，
 试图直接使用最小范数或最大熵原理重新校准期望算子。
@@ -689,7 +695,7 @@ Show Source
 <p>在这种情况下，有一种非常有效的方法可以得到几乎与原始方法一样好的结果：
 <em>对数几率回归</em>（logistic regression）。
 这是用于二元分类的softmax回归（见
-<a class="reference internal" href="../chapter_linear-networks/softmax-regression.html#sec-softmax"><span class="std std-numref">4.4节</span></a>）的一个特例。
+<a class="reference internal" href="../chapter_linear-networks/softmax-regression.html#sec-softmax"><span class="std std-numref">3.4节</span></a>）的一个特例。
 综上所述，我们学习了一个分类器来区分从<span class="math notranslate nohighlight">\(p(\mathbf{x})\)</span>抽取的数据
 和从<span class="math notranslate nohighlight">\(q(\mathbf{x})\)</span>抽取的数据。
 如果无法区分这两个分布，则意味着相关的样本可能来自这两个分布中的任何一个。
@@ -699,14 +705,14 @@ Show Source
 现在用<span class="math notranslate nohighlight">\(z\)</span>标签表示：从<span class="math notranslate nohighlight">\(p\)</span>抽取的数据为<span class="math notranslate nohighlight">\(1\)</span>，从<span class="math notranslate nohighlight">\(q\)</span>抽取的数据为<span class="math notranslate nohighlight">\(-1\)</span>。
 然后，混合数据集中的概率由下式给出</p>
 <div class="math notranslate nohighlight" id="equation-chapter-multilayer-perceptrons-environment-2">
-<span class="eqno">(5.9.6)<a class="headerlink" href="#equation-chapter-multilayer-perceptrons-environment-2" title="Permalink to this equation">¶</a></span>\[P(z=1 \mid \mathbf{x}) = \frac{p(\mathbf{x})}{p(\mathbf{x})+q(\mathbf{x})} \text{ and hence } \frac{P(z=1 \mid \mathbf{x})}{P(z=-1 \mid \mathbf{x})} = \frac{p(\mathbf{x})}{q(\mathbf{x})}.\]</div>
+<span class="eqno">(4.9.6)<a class="headerlink" href="#equation-chapter-multilayer-perceptrons-environment-2" title="Permalink to this equation">¶</a></span>\[P(z=1 \mid \mathbf{x}) = \frac{p(\mathbf{x})}{p(\mathbf{x})+q(\mathbf{x})} \text{ and hence } \frac{P(z=1 \mid \mathbf{x})}{P(z=-1 \mid \mathbf{x})} = \frac{p(\mathbf{x})}{q(\mathbf{x})}.\]</div>
 <p>因此，如果我们使用对数几率回归方法，其中
 <span class="math notranslate nohighlight">\(P(z=1 \mid \mathbf{x})=\frac{1}{1+\exp(-h(\mathbf{x}))}\)</span>
 （<span class="math notranslate nohighlight">\(h\)</span>是一个参数化函数），则很自然有：</p>
 <div class="math notranslate nohighlight" id="equation-chapter-multilayer-perceptrons-environment-3">
-<span class="eqno">(5.9.7)<a class="headerlink" href="#equation-chapter-multilayer-perceptrons-environment-3" title="Permalink to this equation">¶</a></span>\[\beta_i = \frac{1/(1 + \exp(-h(\mathbf{x}_i)))}{\exp(-h(\mathbf{x}_i))/(1 + \exp(-h(\mathbf{x}_i)))} = \exp(h(\mathbf{x}_i)).\]</div>
+<span class="eqno">(4.9.7)<a class="headerlink" href="#equation-chapter-multilayer-perceptrons-environment-3" title="Permalink to this equation">¶</a></span>\[\beta_i = \frac{1/(1 + \exp(-h(\mathbf{x}_i)))}{\exp(-h(\mathbf{x}_i))/(1 + \exp(-h(\mathbf{x}_i)))} = \exp(h(\mathbf{x}_i)).\]</div>
 <p>因此，我们需要解决两个问题： 第一个问题是关于区分来自两个分布的数据；
-第二个问题是关于 <a class="reference internal" href="#equation-eq-weighted-empirical-risk-min">(5.9.5)</a>
+第二个问题是关于 <a class="reference internal" href="#equation-eq-weighted-empirical-risk-min">(4.9.5)</a>
 中的加权经验风险的最小化问题。
 在这个问题中，我们将对其中的项加权<span class="math notranslate nohighlight">\(\beta_i\)</span>。</p>
 <p>现在，我们来看一下完整的协变量偏移纠正算法。
@@ -719,7 +725,7 @@ Show Source
 <li><p>用对数几率回归训练二元分类器得到函数<span class="math notranslate nohighlight">\(h\)</span>。</p></li>
 <li><p>使用<span class="math notranslate nohighlight">\(\beta_i = \exp(h(\mathbf{x}_i))\)</span>或更好的<span class="math notranslate nohighlight">\(\beta_i = \min(\exp(h(\mathbf{x}_i)), c)\)</span>（<span class="math notranslate nohighlight">\(c\)</span>为常量）对训练数据进行加权。</p></li>
 <li><p>使用权重<span class="math notranslate nohighlight">\(\beta_i\)</span>进行
-<a class="reference internal" href="#equation-eq-weighted-empirical-risk-min">(5.9.5)</a>
+<a class="reference internal" href="#equation-eq-weighted-empirical-risk-min">(4.9.5)</a>
 中<span class="math notranslate nohighlight">\(\{(\mathbf{x}_1, y_1), \ldots, (\mathbf{x}_n, y_n)\}\)</span>的训练。</p></li>
 </ol>
 <p>请注意，上述算法依赖于一个重要的假设：
@@ -728,22 +734,22 @@ Show Source
 那么相应的重要性权重会是无穷大。</p>
 </section>
 <section id="id14">
-<h3><span class="section-number">5.9.3.3. </span>标签偏移纠正<a class="headerlink" href="#id14" title="Permalink to this heading">¶</a></h3>
+<h3><span class="section-number">4.9.3.3. </span>标签偏移纠正<a class="headerlink" href="#id14" title="Permalink to this heading">¶</a></h3>
 <p>假设我们处理的是<span class="math notranslate nohighlight">\(k\)</span>个类别的分类任务。 使用
-<a class="reference internal" href="#subsec-covariate-shift-correction"><span class="std std-numref">5.9.3.2节</span></a>中相同符号，
+<a class="reference internal" href="#subsec-covariate-shift-correction"><span class="std std-numref">4.9.3.2节</span></a>中相同符号，
 <span class="math notranslate nohighlight">\(q\)</span>和<span class="math notranslate nohighlight">\(p\)</span>中分别是源分布（例如训练时的分布）和目标分布（例如测试时的分布）。
 假设标签的分布随时间变化：<span class="math notranslate nohighlight">\(q(y) \neq p(y)\)</span>，
 但类别条件分布保持不变：<span class="math notranslate nohighlight">\(q(\mathbf{x} \mid y)=p(\mathbf{x} \mid y)\)</span>。
 如果源分布<span class="math notranslate nohighlight">\(q(y)\)</span>是“错误的”， 我们可以根据
-<a class="reference internal" href="#equation-eq-true-risk">(5.9.2)</a>中定义的真实风险中的恒等式进行更正：</p>
+<a class="reference internal" href="#equation-eq-true-risk">(4.9.2)</a>中定义的真实风险中的恒等式进行更正：</p>
 <div class="math notranslate nohighlight" id="equation-chapter-multilayer-perceptrons-environment-4">
-<span class="eqno">(5.9.8)<a class="headerlink" href="#equation-chapter-multilayer-perceptrons-environment-4" title="Permalink to this equation">¶</a></span>\[\begin{aligned}
+<span class="eqno">(4.9.8)<a class="headerlink" href="#equation-chapter-multilayer-perceptrons-environment-4" title="Permalink to this equation">¶</a></span>\[\begin{aligned}
 \int\int l(f(\mathbf{x}), y) p(\mathbf{x} \mid y)p(y) \;d\mathbf{x}dy =
 \int\int l(f(\mathbf{x}), y) q(\mathbf{x} \mid y)q(y)\frac{p(y)}{q(y)} \;d\mathbf{x}dy.
 \end{aligned}\]</div>
 <p>这里，重要性权重将对应于标签似然比率</p>
 <div class="math notranslate nohighlight" id="equation-chapter-multilayer-perceptrons-environment-5">
-<span class="eqno">(5.9.9)<a class="headerlink" href="#equation-chapter-multilayer-perceptrons-environment-5" title="Permalink to this equation">¶</a></span>\[\beta_i \stackrel{\mathrm{def}}{=} \frac{p(y_i)}{q(y_i)}.\]</div>
+<span class="eqno">(4.9.9)<a class="headerlink" href="#equation-chapter-multilayer-perceptrons-environment-5" title="Permalink to this equation">¶</a></span>\[\beta_i \stackrel{\mathrm{def}}{=} \frac{p(y_i)}{q(y_i)}.\]</div>
 <p>标签偏移的一个好处是，如果我们在源分布上有一个相当好的模型，
 那么我们可以得到对这些权重的一致估计，而不需要处理周边的其他维度。
 在深度学习中，输入往往是高维对象（如图像），而标签通常是低维（如类别）。</p>
@@ -764,7 +770,7 @@ Show Source
 以及如果标签偏移假设成立（这里最强的假设），
 我们就可以通过求解一个简单的线性系统来估计测试集的标签分布</p>
 <div class="math notranslate nohighlight" id="equation-chapter-multilayer-perceptrons-environment-6">
-<span class="eqno">(5.9.10)<a class="headerlink" href="#equation-chapter-multilayer-perceptrons-environment-6" title="Permalink to this equation">¶</a></span>\[\mathbf{C} p(\mathbf{y}) = \mu(\hat{\mathbf{y}}),\]</div>
+<span class="eqno">(4.9.10)<a class="headerlink" href="#equation-chapter-multilayer-perceptrons-environment-6" title="Permalink to this equation">¶</a></span>\[\mathbf{C} p(\mathbf{y}) = \mu(\hat{\mathbf{y}}),\]</div>
 <p>因为作为一个估计，<span class="math notranslate nohighlight">\(\sum_{j=1}^k c_{ij} p(y_j) = \mu(\hat{y}_i)\)</span>
 对所有<span class="math notranslate nohighlight">\(1 \leq i \leq k\)</span>成立，
 其中<span class="math notranslate nohighlight">\(p(y_j)\)</span>是<span class="math notranslate nohighlight">\(k\)</span>维标签分布向量<span class="math notranslate nohighlight">\(p(\mathbf{y})\)</span>的第<span class="math notranslate nohighlight">\(j^\mathrm{th}\)</span>元素。
@@ -774,10 +780,10 @@ Show Source
 那么对于标签为<span class="math notranslate nohighlight">\(y_i\)</span>的任何训练样本<span class="math notranslate nohighlight">\(i\)</span>，
 我们可以使用我们估计的<span class="math notranslate nohighlight">\(p(y_i)/q(y_i)\)</span>比率来计算权重<span class="math notranslate nohighlight">\(\beta_i\)</span>，
 并将其代入
-<a class="reference internal" href="#equation-eq-weighted-empirical-risk-min">(5.9.5)</a>中的加权经验风险最小化中。</p>
+<a class="reference internal" href="#equation-eq-weighted-empirical-risk-min">(4.9.5)</a>中的加权经验风险最小化中。</p>
 </section>
 <section id="id15">
-<h3><span class="section-number">5.9.3.4. </span>概念偏移纠正<a class="headerlink" href="#id15" title="Permalink to this heading">¶</a></h3>
+<h3><span class="section-number">4.9.3.4. </span>概念偏移纠正<a class="headerlink" href="#id15" title="Permalink to this heading">¶</a></h3>
 <p>概念偏移很难用原则性的方式解决。
 例如，在一个问题突然从“区分猫和狗”偏移为“区分白色和黑色动物”的情况下，
 除了从零开始收集新标签和训练，别无妙方。
@@ -793,10 +799,10 @@ Show Source
 </section>
 </section>
 <section id="id16">
-<h2><span class="section-number">5.9.4. </span>学习问题的分类法<a class="headerlink" href="#id16" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">4.9.4. </span>学习问题的分类法<a class="headerlink" href="#id16" title="Permalink to this heading">¶</a></h2>
 <p>有了如何处理分布变化的知识，我们现在可以考虑机器学习问题形式化的其他方面。</p>
 <section id="id17">
-<h3><span class="section-number">5.9.4.1. </span>批量学习<a class="headerlink" href="#id17" title="Permalink to this heading">¶</a></h3>
+<h3><span class="section-number">4.9.4.1. </span>批量学习<a class="headerlink" href="#id17" title="Permalink to this heading">¶</a></h3>
 <p>在<em>批量学习</em>（batch learning）中，我们可以访问一组训练特征和标签
 <span class="math notranslate nohighlight">\(\{(\mathbf{x}_1, y_1), \ldots, (\mathbf{x}_n, y_n)\}\)</span>，
 我们使用这些特性和标签训练<span class="math notranslate nohighlight">\(f(\mathbf{x})\)</span>。
@@ -806,7 +812,7 @@ Show Source
 然后这个系统会被安装在客户家中，基本再也不会更新。</p>
 </section>
 <section id="id18">
-<h3><span class="section-number">5.9.4.2. </span>在线学习<a class="headerlink" href="#id18" title="Permalink to this heading">¶</a></h3>
+<h3><span class="section-number">4.9.4.2. </span>在线学习<a class="headerlink" href="#id18" title="Permalink to this heading">¶</a></h3>
 <p>除了“批量”地学习，我们还可以单个“在线”学习数据<span class="math notranslate nohighlight">\((\mathbf{x}_i, y_i)\)</span>。
 更具体地说，我们首先观测到<span class="math notranslate nohighlight">\(\mathbf{x}_i\)</span>，
 然后我们得出一个估计值<span class="math notranslate nohighlight">\(f(\mathbf{x}_i)\)</span>，
@@ -817,7 +823,7 @@ Show Source
 换句话说，在<em>在线学习</em>（online learning）中，我们有以下的循环。
 在这个循环中，给定新的观测结果，我们会不断地改进我们的模型。</p>
 <div class="math notranslate nohighlight" id="equation-chapter-multilayer-perceptrons-environment-7">
-<span class="eqno">(5.9.11)<a class="headerlink" href="#equation-chapter-multilayer-perceptrons-environment-7" title="Permalink to this equation">¶</a></span>\[\mathrm{model} ~ f_t \longrightarrow
+<span class="eqno">(4.9.11)<a class="headerlink" href="#equation-chapter-multilayer-perceptrons-environment-7" title="Permalink to this equation">¶</a></span>\[\mathrm{model} ~ f_t \longrightarrow
 \mathrm{data} ~ \mathbf{x}_t \longrightarrow
 \mathrm{estimate} ~ f_t(\mathbf{x}_t) \longrightarrow
 \mathrm{observation} ~ y_t \longrightarrow
@@ -825,7 +831,7 @@ Show Source
 \mathrm{model} ~ f_{t+1}\]</div>
 </section>
 <section id="id19">
-<h3><span class="section-number">5.9.4.3. </span>老虎机<a class="headerlink" href="#id19" title="Permalink to this heading">¶</a></h3>
+<h3><span class="section-number">4.9.4.3. </span>老虎机<a class="headerlink" href="#id19" title="Permalink to this heading">¶</a></h3>
 <p><em>老虎机</em>（bandits）是上述问题的一个特例。
 虽然在大多数学习问题中，我们有一个连续参数化的函数<span class="math notranslate nohighlight">\(f\)</span>（例如，一个深度网络）。
 但在一个<em>老虎机</em>问题中，我们只有有限数量的手臂可以拉动。
@@ -834,7 +840,7 @@ Show Source
 我们之所以列出它，主要是因为这个问题经常被视为一个单独的学习问题的情景。</p>
 </section>
 <section id="id20">
-<h3><span class="section-number">5.9.4.4. </span>控制<a class="headerlink" href="#id20" title="Permalink to this heading">¶</a></h3>
+<h3><span class="section-number">4.9.4.4. </span>控制<a class="headerlink" href="#id20" title="Permalink to this heading">¶</a></h3>
 <p>在很多情况下，环境会记住我们所做的事。
 不一定是以一种对抗的方式，但它会记住，而且它的反应将取决于之前发生的事情。
 例如，咖啡锅炉控制器将根据之前是否加热锅炉来观测到不同的温度。
@@ -846,7 +852,7 @@ Show Source
 <span id="id21">()</span>。</p>
 </section>
 <section id="id22">
-<h3><span class="section-number">5.9.4.5. </span>强化学习<a class="headerlink" href="#id22" title="Permalink to this heading">¶</a></h3>
+<h3><span class="section-number">4.9.4.5. </span>强化学习<a class="headerlink" href="#id22" title="Permalink to this heading">¶</a></h3>
 <p><em>强化学习</em>（reinforcement
 learning）强调如何基于环境而行动，以取得最大化的预期利益。
 国际象棋、围棋、西洋双陆棋或星际争霸都是强化学习的应用实例。
@@ -854,7 +860,7 @@ learning）强调如何基于环境而行动，以取得最大化的预期利益
 （例如，试图避开某物体，试图造成事故，或者试图与其合作）。</p>
 </section>
 <section id="id23">
-<h3><span class="section-number">5.9.4.6. </span>考虑到环境<a class="headerlink" href="#id23" title="Permalink to this heading">¶</a></h3>
+<h3><span class="section-number">4.9.4.6. </span>考虑到环境<a class="headerlink" href="#id23" title="Permalink to this heading">¶</a></h3>
 <p>上述不同情况之间的一个关键区别是： 在静止环境中可能一直有效的相同策略，
 在环境能够改变的情况下可能不会始终有效。
 例如，一个交易者发现的套利机会很可能在他开始利用它时就消失了。
@@ -868,7 +874,7 @@ learning）强调如何基于环境而行动，以取得最大化的预期利益
 </section>
 </section>
 <section id="id24">
-<h2><span class="section-number">5.9.5. </span>机器学习中的公平、责任和透明度<a class="headerlink" href="#id24" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">4.9.5. </span>机器学习中的公平、责任和透明度<a class="headerlink" href="#id24" title="Permalink to this heading">¶</a></h2>
 <p>最后，重要的是，当我们部署机器学习系统时， 不仅仅是在优化一个预测模型，
 而通常是在提供一个会被用来（部分或完全）进行自动化决策的工具。
 这些技术系统可能会通过其进行的决定而影响到每个人的生活。</p>
@@ -898,7 +904,7 @@ learning）强调如何基于环境而行动，以取得最大化的预期利益
 这些只是在机器学习职业生涯中可能遇到的令人感到“压力山大”的道德困境中的一小部分。</p>
 </section>
 <section id="id25">
-<h2><span class="section-number">5.9.6. </span>小结<a class="headerlink" href="#id25" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">4.9.6. </span>小结<a class="headerlink" href="#id25" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>在许多情况下，训练集和测试集并不来自同一个分布。这就是所谓的分布偏移。</p></li>
 <li><p>真实风险是从真实分布中抽取的所有数据的总体损失的预期。然而，这个数据总体通常是无法获得的。经验风险是训练数据的平均损失，用于近似真实风险。在实践中，我们进行经验风险最小化。</p></li>
@@ -907,7 +913,7 @@ learning）强调如何基于环境而行动，以取得最大化的预期利益
 </ul>
 </section>
 <section id="id26">
-<h2><span class="section-number">5.9.7. </span>练习<a class="headerlink" href="#id26" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">4.9.7. </span>练习<a class="headerlink" href="#id26" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic simple">
 <li><p>当我们改变搜索引擎的行为时会发生什么？用户可能会做什么？广告商呢？</p></li>
 <li><p>实现一个协变量偏移检测器。提示：构建一个分类器。</p></li>
@@ -927,39 +933,39 @@ learning）强调如何基于环境而行动，以取得最大化的预期利益
       <span class="caption-text">Table Of Contents</span>
     </p>
     <ul>
-<li><a class="reference internal" href="#">5.9. 环境和分布偏移</a><ul>
-<li><a class="reference internal" href="#id2">5.9.1. 分布偏移的类型</a><ul>
-<li><a class="reference internal" href="#id3">5.9.1.1. 协变量偏移</a></li>
-<li><a class="reference internal" href="#id4">5.9.1.2. 标签偏移</a></li>
-<li><a class="reference internal" href="#id5">5.9.1.3. 概念偏移</a></li>
+<li><a class="reference internal" href="#">4.9. 环境和分布偏移</a><ul>
+<li><a class="reference internal" href="#id2">4.9.1. 分布偏移的类型</a><ul>
+<li><a class="reference internal" href="#id3">4.9.1.1. 协变量偏移</a></li>
+<li><a class="reference internal" href="#id4">4.9.1.2. 标签偏移</a></li>
+<li><a class="reference internal" href="#id5">4.9.1.3. 概念偏移</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id6">5.9.2. 分布偏移示例</a><ul>
-<li><a class="reference internal" href="#id7">5.9.2.1. 医学诊断</a></li>
-<li><a class="reference internal" href="#id8">5.9.2.2. 自动驾驶汽车</a></li>
-<li><a class="reference internal" href="#id9">5.9.2.3. 非平稳分布</a></li>
-<li><a class="reference internal" href="#id10">5.9.2.4. 更多轶事</a></li>
+<li><a class="reference internal" href="#id6">4.9.2. 分布偏移示例</a><ul>
+<li><a class="reference internal" href="#id7">4.9.2.1. 医学诊断</a></li>
+<li><a class="reference internal" href="#id8">4.9.2.2. 自动驾驶汽车</a></li>
+<li><a class="reference internal" href="#id9">4.9.2.3. 非平稳分布</a></li>
+<li><a class="reference internal" href="#id10">4.9.2.4. 更多轶事</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id11">5.9.3. 分布偏移纠正</a><ul>
-<li><a class="reference internal" href="#subsec-empirical-risk-and-risk">5.9.3.1. 经验风险与实际风险</a></li>
-<li><a class="reference internal" href="#subsec-covariate-shift-correction">5.9.3.2. 协变量偏移纠正</a></li>
-<li><a class="reference internal" href="#id14">5.9.3.3. 标签偏移纠正</a></li>
-<li><a class="reference internal" href="#id15">5.9.3.4. 概念偏移纠正</a></li>
+<li><a class="reference internal" href="#id11">4.9.3. 分布偏移纠正</a><ul>
+<li><a class="reference internal" href="#subsec-empirical-risk-and-risk">4.9.3.1. 经验风险与实际风险</a></li>
+<li><a class="reference internal" href="#subsec-covariate-shift-correction">4.9.3.2. 协变量偏移纠正</a></li>
+<li><a class="reference internal" href="#id14">4.9.3.3. 标签偏移纠正</a></li>
+<li><a class="reference internal" href="#id15">4.9.3.4. 概念偏移纠正</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id16">5.9.4. 学习问题的分类法</a><ul>
-<li><a class="reference internal" href="#id17">5.9.4.1. 批量学习</a></li>
-<li><a class="reference internal" href="#id18">5.9.4.2. 在线学习</a></li>
-<li><a class="reference internal" href="#id19">5.9.4.3. 老虎机</a></li>
-<li><a class="reference internal" href="#id20">5.9.4.4. 控制</a></li>
-<li><a class="reference internal" href="#id22">5.9.4.5. 强化学习</a></li>
-<li><a class="reference internal" href="#id23">5.9.4.6. 考虑到环境</a></li>
+<li><a class="reference internal" href="#id16">4.9.4. 学习问题的分类法</a><ul>
+<li><a class="reference internal" href="#id17">4.9.4.1. 批量学习</a></li>
+<li><a class="reference internal" href="#id18">4.9.4.2. 在线学习</a></li>
+<li><a class="reference internal" href="#id19">4.9.4.3. 老虎机</a></li>
+<li><a class="reference internal" href="#id20">4.9.4.4. 控制</a></li>
+<li><a class="reference internal" href="#id22">4.9.4.5. 强化学习</a></li>
+<li><a class="reference internal" href="#id23">4.9.4.6. 考虑到环境</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id24">5.9.5. 机器学习中的公平、责任和透明度</a></li>
-<li><a class="reference internal" href="#id25">5.9.6. 小结</a></li>
-<li><a class="reference internal" href="#id26">5.9.7. 练习</a></li>
+<li><a class="reference internal" href="#id24">4.9.5. 机器学习中的公平、责任和透明度</a></li>
+<li><a class="reference internal" href="#id25">4.9.6. 小结</a></li>
+<li><a class="reference internal" href="#id26">4.9.7. 练习</a></li>
 </ul>
 </li>
 </ul>
@@ -974,14 +980,14 @@ learning）强调如何基于环境而行动，以取得最大化的预期利益
          <i class="pagenation-arrow-L fas fa-arrow-left fa-lg"></i>
          <div class="pagenation-text">
             <span class="pagenation-direction">Previous</span>
-            <div>5.8. 数值稳定性和模型初始化</div>
+            <div>4.8. 数值稳定性和模型初始化</div>
          </div>
      </a>
      <a id="button-next" href="kaggle-house-price.html" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored" role="botton" accesskey="N">
          <i class="pagenation-arrow-R fas fa-arrow-right fa-lg"></i>
         <div class="pagenation-text">
             <span class="pagenation-direction">Next</span>
-            <div>5.10. 实战Kaggle比赛：预测房价</div>
+            <div>4.10. 实战Kaggle比赛：预测房价</div>
         </div>
      </a>
   </div>
