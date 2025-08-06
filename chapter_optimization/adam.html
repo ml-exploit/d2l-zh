@@ -3,8 +3,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -29,7 +28,7 @@
     <link rel="shortcut icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="12. 计算性能" href="../chapter_computational-performance/index.html" />
+    <link rel="next" title="11.11. 学习率调度器" href="lr-scheduler.html" />
     <link rel="prev" title="11.9. Adadelta" href="adadelta.html" /> 
   </head>
 <body>
@@ -73,9 +72,9 @@ Show Source
       <div class="mdl-layout-spacer"></div>
       <nav class="mdl-navigation">
           
-              <a  class="mdl-navigation__link" href="https://zh-v2.d2l.ai/d2l-zh.pdf">
+              <a  class="mdl-navigation__link" href="https//ml-exploit.github.io/d2l-zh/download/d2l-zh-mlx.pdf">
                   <i class="fas fa-file-pdf"></i>
-                  MXNet
+                  MLX
               </a>
           
               <a  class="mdl-navigation__link" href="https://zh-v2.d2l.ai/d2l-zh-pytorch.pdf">
@@ -228,6 +227,7 @@ Show Source
 <li class="toctree-l2"><a class="reference internal" href="rmsprop.html">11.8. RMSProp算法</a></li>
 <li class="toctree-l2"><a class="reference internal" href="adadelta.html">11.9. Adadelta</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">11.10. Adam算法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lr-scheduler.html">11.11. 学习率调度器</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../chapter_computational-performance/index.html">12. 计算性能</a><ul class="simple">
@@ -245,8 +245,9 @@ Show Source
 <li class="toctree-l2"><a class="reference internal" href="../chapter_computer-vision/semantic-segmentation-and-dataset.html">13.9. 语义分割和数据集</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter_computer-vision/transposed-conv.html">13.10. 转置卷积</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter_computer-vision/fcn.html">13.11. 全卷积网络</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_computer-vision/kaggle-cifar10.html">13.12. 实战 Kaggle 比赛：图像分类 (CIFAR-10)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_computer-vision/kaggle-dog.html">13.13. 实战Kaggle比赛：狗的品种识别（ImageNet Dogs）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_computer-vision/neural-style.html">13.12. 风格迁移</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_computer-vision/kaggle-cifar10.html">13.13. 实战 Kaggle 比赛：图像分类 (CIFAR-10)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_computer-vision/kaggle-dog.html">13.14. 实战Kaggle比赛：狗的品种识别（ImageNet Dogs）</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../chapter_natural-language-processing-pretraining/index.html">14. 自然语言处理：预训练</a><ul>
@@ -264,11 +265,12 @@ Show Source
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../chapter_natural-language-processing-applications/index.html">15. 自然语言处理：应用</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../chapter_natural-language-processing-applications/sentiment-analysis-and-dataset.html">15.1. 情感分析及数据集</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_natural-language-processing-applications/sentiment-analysis-cnn.html">15.2. 情感分析：使用卷积神经网络</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_natural-language-processing-applications/natural-language-inference-and-dataset.html">15.3. 自然语言推断与数据集</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_natural-language-processing-applications/natural-language-inference-attention.html">15.4. 自然语言推断：使用注意力</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_natural-language-processing-applications/finetuning-bert.html">15.5. 针对序列级和词元级应用微调BERT</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_natural-language-processing-applications/natural-language-inference-bert.html">15.6. 自然语言推断：微调BERT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_natural-language-processing-applications/sentiment-analysis-rnn.html">15.2. 情感分析：使用循环神经网络</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_natural-language-processing-applications/sentiment-analysis-cnn.html">15.3. 情感分析：使用卷积神经网络</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_natural-language-processing-applications/natural-language-inference-and-dataset.html">15.4. 自然语言推断与数据集</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_natural-language-processing-applications/natural-language-inference-attention.html">15.5. 自然语言推断：使用注意力</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_natural-language-processing-applications/finetuning-bert.html">15.6. 针对序列级和词元级应用微调BERT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_natural-language-processing-applications/natural-language-inference-bert.html">15.7. 自然语言推断：微调BERT</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../chapter_appendix-tools-for-deep-learning/index.html">16. Appendix: Tools for Deep Learning</a><ul>
@@ -415,6 +417,7 @@ Show Source
 <li class="toctree-l2"><a class="reference internal" href="rmsprop.html">11.8. RMSProp算法</a></li>
 <li class="toctree-l2"><a class="reference internal" href="adadelta.html">11.9. Adadelta</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">11.10. Adam算法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lr-scheduler.html">11.11. 学习率调度器</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../chapter_computational-performance/index.html">12. 计算性能</a><ul class="simple">
@@ -432,8 +435,9 @@ Show Source
 <li class="toctree-l2"><a class="reference internal" href="../chapter_computer-vision/semantic-segmentation-and-dataset.html">13.9. 语义分割和数据集</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter_computer-vision/transposed-conv.html">13.10. 转置卷积</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter_computer-vision/fcn.html">13.11. 全卷积网络</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_computer-vision/kaggle-cifar10.html">13.12. 实战 Kaggle 比赛：图像分类 (CIFAR-10)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_computer-vision/kaggle-dog.html">13.13. 实战Kaggle比赛：狗的品种识别（ImageNet Dogs）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_computer-vision/neural-style.html">13.12. 风格迁移</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_computer-vision/kaggle-cifar10.html">13.13. 实战 Kaggle 比赛：图像分类 (CIFAR-10)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_computer-vision/kaggle-dog.html">13.14. 实战Kaggle比赛：狗的品种识别（ImageNet Dogs）</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../chapter_natural-language-processing-pretraining/index.html">14. 自然语言处理：预训练</a><ul>
@@ -451,11 +455,12 @@ Show Source
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../chapter_natural-language-processing-applications/index.html">15. 自然语言处理：应用</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../chapter_natural-language-processing-applications/sentiment-analysis-and-dataset.html">15.1. 情感分析及数据集</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_natural-language-processing-applications/sentiment-analysis-cnn.html">15.2. 情感分析：使用卷积神经网络</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_natural-language-processing-applications/natural-language-inference-and-dataset.html">15.3. 自然语言推断与数据集</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_natural-language-processing-applications/natural-language-inference-attention.html">15.4. 自然语言推断：使用注意力</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_natural-language-processing-applications/finetuning-bert.html">15.5. 针对序列级和词元级应用微调BERT</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_natural-language-processing-applications/natural-language-inference-bert.html">15.6. 自然语言推断：微调BERT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_natural-language-processing-applications/sentiment-analysis-rnn.html">15.2. 情感分析：使用循环神经网络</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_natural-language-processing-applications/sentiment-analysis-cnn.html">15.3. 情感分析：使用卷积神经网络</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_natural-language-processing-applications/natural-language-inference-and-dataset.html">15.4. 自然语言推断与数据集</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_natural-language-processing-applications/natural-language-inference-attention.html">15.5. 自然语言推断：使用注意力</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_natural-language-processing-applications/finetuning-bert.html">15.6. 针对序列级和词元级应用微调BERT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_natural-language-processing-applications/natural-language-inference-bert.html">15.7. 自然语言推断：微调BERT</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../chapter_appendix-tools-for-deep-learning/index.html">16. Appendix: Tools for Deep Learning</a><ul>
@@ -479,7 +484,7 @@ Show Source
     <div class="document">
         <div class="page-content" role="main">
         
-  <section id="adam">
+  <div class="section" id="adam">
 <span id="sec-adam"></span><h1><span class="section-number">11.10. </span>Adam算法<a class="headerlink" href="#adam" title="Permalink to this heading">¶</a></h1>
 <p>本章我们已经学习了许多有效优化的技术。
 在本节讨论之前，我们先详细回顾一下这些技术：</p>
@@ -503,7 +508,7 @@ Show Source
 在完善工作中，
 <span id="id3">()</span>给Adam算法提供了一个称为Yogi的热补丁来解决这些问题。
 下面我们了解一下Adam算法。</p>
-<section id="id4">
+<div class="section" id="id4">
 <h2><span class="section-number">11.10.1. </span>算法<a class="headerlink" href="#id4" title="Permalink to this heading">¶</a></h2>
 <p>Adam算法的关键组成部分之一是：它使用指数加权移动平均值来估算梯度的动量和二次矩，即它使用状态变量</p>
 <div class="math notranslate nohighlight" id="equation-chapter-optimization-adam-0">
@@ -535,8 +540,8 @@ Show Source
 它们相当独特的定义使我们移除偏项（这可以通过稍微不同的初始化和更新条件来修正）。
 其次，RMSProp算法中两项的组合都非常简单。
 最后，明确的学习率<span class="math notranslate nohighlight">\(\eta\)</span>使我们能够控制步长来解决收敛问题。</p>
-</section>
-<section id="id5">
+</div>
+<div class="section" id="id5">
 <h2><span class="section-number">11.10.2. </span>实现<a class="headerlink" href="#id5" title="Permalink to this heading">¶</a></h2>
 <p>从头开始实现Adam算法并不难。
 为方便起见，我们将时间步<span class="math notranslate nohighlight">\(t\)</span>存储在<code class="docutils literal notranslate"><span class="pre">hyperparams</span></code>字典中。
@@ -573,8 +578,8 @@ Show Source
 <div class="output highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">loss</span><span class="p">:</span> <span class="mf">0.243</span><span class="p">,</span> <span class="mf">0.012</span> <span class="n">sec</span><span class="o">/</span><span class="n">epoch</span>
 </pre></div>
 </div>
-<figure class="align-default">
-<img alt="../_images/output_adam_944a18_3_1.svg" src="../_images/output_adam_944a18_3_1.svg" /></figure>
+<div class="figure align-default">
+<img alt="../_images/output_adam_944a18_3_1.svg" src="../_images/output_adam_944a18_3_1.svg" /></div>
 <p>此外，我们可以用深度学习框架自带算法应用Adam算法，这里我们只需要传递配置参数。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">trainer</span> <span class="o">=</span> <span class="n">optim</span><span class="o">.</span><span class="n">Adam</span>
 <span class="n">d2l</span><span class="o">.</span><span class="n">train_concise_ch11</span><span class="p">(</span><span class="n">trainer</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;learning_rate&#39;</span><span class="p">:</span> <span class="mf">0.01</span><span class="p">},</span> <span class="n">data_iter</span><span class="p">,</span> <span class="n">valid_iter</span><span class="p">)</span>
@@ -583,10 +588,10 @@ Show Source
 <div class="output highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">loss</span><span class="p">:</span> <span class="mf">0.244</span><span class="p">,</span> <span class="mf">0.010</span> <span class="n">sec</span><span class="o">/</span><span class="n">epoch</span>
 </pre></div>
 </div>
-<figure class="align-default">
-<img alt="../_images/output_adam_944a18_5_1.svg" src="../_images/output_adam_944a18_5_1.svg" /></figure>
-</section>
-<section id="yogi">
+<div class="figure align-default">
+<img alt="../_images/output_adam_944a18_5_1.svg" src="../_images/output_adam_944a18_5_1.svg" /></div>
+</div>
+<div class="section" id="yogi">
 <h2><span class="section-number">11.10.3. </span>Yogi<a class="headerlink" href="#yogi" title="Permalink to this heading">¶</a></h2>
 <p>Adam算法也存在一些问题：
 即使在凸环境下，当<span class="math notranslate nohighlight">\(\mathbf{s}_t\)</span>的二次矩估计值爆炸时，它可能无法收敛。
@@ -620,10 +625,10 @@ Show Source
 <div class="output highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">loss</span><span class="p">:</span> <span class="mf">0.243</span><span class="p">,</span> <span class="mf">0.014</span> <span class="n">sec</span><span class="o">/</span><span class="n">epoch</span>
 </pre></div>
 </div>
-<figure class="align-default">
-<img alt="../_images/output_adam_944a18_7_1.svg" src="../_images/output_adam_944a18_7_1.svg" /></figure>
-</section>
-<section id="id7">
+<div class="figure align-default">
+<img alt="../_images/output_adam_944a18_7_1.svg" src="../_images/output_adam_944a18_7_1.svg" /></div>
+</div>
+<div class="section" id="id7">
 <h2><span class="section-number">11.10.4. </span>小结<a class="headerlink" href="#id7" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>Adam算法将许多优化算法的功能结合到了相当强大的更新规则中。</p></li>
@@ -631,8 +636,8 @@ Show Source
 <li><p>在估计动量和二次矩时，Adam算法使用偏差校正来调整缓慢的启动速度。</p></li>
 <li><p>对于具有显著差异的梯度，我们可能会遇到收敛性问题。我们可以通过使用更大的小批量或者切换到改进的估计值<span class="math notranslate nohighlight">\(\mathbf{s}_t\)</span>来修正它们。Yogi提供了这样的替代方案。</p></li>
 </ul>
-</section>
-<section id="id8">
+</div>
+<div class="section" id="id8">
 <h2><span class="section-number">11.10.5. </span>练习<a class="headerlink" href="#id8" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic simple">
 <li><p>调节学习率，观察并分析实验结果。</p></li>
@@ -640,8 +645,8 @@ Show Source
 <li><p>收敛时为什么需要降低学习率<span class="math notranslate nohighlight">\(\eta\)</span>？</p></li>
 <li><p>尝试构造一个使用Adam算法会发散而Yogi会收敛的例子。</p></li>
 </ol>
-</section>
-</section>
+</div>
+</div>
 
 
         </div>
@@ -675,11 +680,11 @@ Show Source
             <div>11.9. Adadelta</div>
          </div>
      </a>
-     <a id="button-next" href="../chapter_computational-performance/index.html" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored" role="botton" accesskey="N">
+     <a id="button-next" href="lr-scheduler.html" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored" role="botton" accesskey="N">
          <i class="pagenation-arrow-R fas fa-arrow-right fa-lg"></i>
         <div class="pagenation-text">
             <span class="pagenation-direction">Next</span>
-            <div>12. 计算性能</div>
+            <div>11.11. 学习率调度器</div>
         </div>
      </a>
   </div>

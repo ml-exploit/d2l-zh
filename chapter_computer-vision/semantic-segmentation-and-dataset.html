@@ -3,8 +3,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -73,9 +72,9 @@ Show Source
       <div class="mdl-layout-spacer"></div>
       <nav class="mdl-navigation">
           
-              <a  class="mdl-navigation__link" href="https://zh-v2.d2l.ai/d2l-zh.pdf">
+              <a  class="mdl-navigation__link" href="https//ml-exploit.github.io/d2l-zh/download/d2l-zh-mlx.pdf">
                   <i class="fas fa-file-pdf"></i>
-                  MXNet
+                  MLX
               </a>
           
               <a  class="mdl-navigation__link" href="https://zh-v2.d2l.ai/d2l-zh-pytorch.pdf">
@@ -228,6 +227,7 @@ Show Source
 <li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/rmsprop.html">11.8. RMSProp算法</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/adadelta.html">11.9. Adadelta</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/adam.html">11.10. Adam算法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/lr-scheduler.html">11.11. 学习率调度器</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../chapter_computational-performance/index.html">12. 计算性能</a><ul class="simple">
@@ -245,8 +245,9 @@ Show Source
 <li class="toctree-l2 current"><a class="current reference internal" href="#">13.9. 语义分割和数据集</a></li>
 <li class="toctree-l2"><a class="reference internal" href="transposed-conv.html">13.10. 转置卷积</a></li>
 <li class="toctree-l2"><a class="reference internal" href="fcn.html">13.11. 全卷积网络</a></li>
-<li class="toctree-l2"><a class="reference internal" href="kaggle-cifar10.html">13.12. 实战 Kaggle 比赛：图像分类 (CIFAR-10)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="kaggle-dog.html">13.13. 实战Kaggle比赛：狗的品种识别（ImageNet Dogs）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="neural-style.html">13.12. 风格迁移</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kaggle-cifar10.html">13.13. 实战 Kaggle 比赛：图像分类 (CIFAR-10)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kaggle-dog.html">13.14. 实战Kaggle比赛：狗的品种识别（ImageNet Dogs）</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../chapter_natural-language-processing-pretraining/index.html">14. 自然语言处理：预训练</a><ul>
@@ -264,11 +265,12 @@ Show Source
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../chapter_natural-language-processing-applications/index.html">15. 自然语言处理：应用</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../chapter_natural-language-processing-applications/sentiment-analysis-and-dataset.html">15.1. 情感分析及数据集</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_natural-language-processing-applications/sentiment-analysis-cnn.html">15.2. 情感分析：使用卷积神经网络</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_natural-language-processing-applications/natural-language-inference-and-dataset.html">15.3. 自然语言推断与数据集</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_natural-language-processing-applications/natural-language-inference-attention.html">15.4. 自然语言推断：使用注意力</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_natural-language-processing-applications/finetuning-bert.html">15.5. 针对序列级和词元级应用微调BERT</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_natural-language-processing-applications/natural-language-inference-bert.html">15.6. 自然语言推断：微调BERT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_natural-language-processing-applications/sentiment-analysis-rnn.html">15.2. 情感分析：使用循环神经网络</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_natural-language-processing-applications/sentiment-analysis-cnn.html">15.3. 情感分析：使用卷积神经网络</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_natural-language-processing-applications/natural-language-inference-and-dataset.html">15.4. 自然语言推断与数据集</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_natural-language-processing-applications/natural-language-inference-attention.html">15.5. 自然语言推断：使用注意力</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_natural-language-processing-applications/finetuning-bert.html">15.6. 针对序列级和词元级应用微调BERT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_natural-language-processing-applications/natural-language-inference-bert.html">15.7. 自然语言推断：微调BERT</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../chapter_appendix-tools-for-deep-learning/index.html">16. Appendix: Tools for Deep Learning</a><ul>
@@ -415,6 +417,7 @@ Show Source
 <li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/rmsprop.html">11.8. RMSProp算法</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/adadelta.html">11.9. Adadelta</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/adam.html">11.10. Adam算法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/lr-scheduler.html">11.11. 学习率调度器</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../chapter_computational-performance/index.html">12. 计算性能</a><ul class="simple">
@@ -432,8 +435,9 @@ Show Source
 <li class="toctree-l2 current"><a class="current reference internal" href="#">13.9. 语义分割和数据集</a></li>
 <li class="toctree-l2"><a class="reference internal" href="transposed-conv.html">13.10. 转置卷积</a></li>
 <li class="toctree-l2"><a class="reference internal" href="fcn.html">13.11. 全卷积网络</a></li>
-<li class="toctree-l2"><a class="reference internal" href="kaggle-cifar10.html">13.12. 实战 Kaggle 比赛：图像分类 (CIFAR-10)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="kaggle-dog.html">13.13. 实战Kaggle比赛：狗的品种识别（ImageNet Dogs）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="neural-style.html">13.12. 风格迁移</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kaggle-cifar10.html">13.13. 实战 Kaggle 比赛：图像分类 (CIFAR-10)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kaggle-dog.html">13.14. 实战Kaggle比赛：狗的品种识别（ImageNet Dogs）</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../chapter_natural-language-processing-pretraining/index.html">14. 自然语言处理：预训练</a><ul>
@@ -451,11 +455,12 @@ Show Source
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../chapter_natural-language-processing-applications/index.html">15. 自然语言处理：应用</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../chapter_natural-language-processing-applications/sentiment-analysis-and-dataset.html">15.1. 情感分析及数据集</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_natural-language-processing-applications/sentiment-analysis-cnn.html">15.2. 情感分析：使用卷积神经网络</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_natural-language-processing-applications/natural-language-inference-and-dataset.html">15.3. 自然语言推断与数据集</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_natural-language-processing-applications/natural-language-inference-attention.html">15.4. 自然语言推断：使用注意力</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_natural-language-processing-applications/finetuning-bert.html">15.5. 针对序列级和词元级应用微调BERT</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_natural-language-processing-applications/natural-language-inference-bert.html">15.6. 自然语言推断：微调BERT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_natural-language-processing-applications/sentiment-analysis-rnn.html">15.2. 情感分析：使用循环神经网络</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_natural-language-processing-applications/sentiment-analysis-cnn.html">15.3. 情感分析：使用卷积神经网络</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_natural-language-processing-applications/natural-language-inference-and-dataset.html">15.4. 自然语言推断与数据集</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_natural-language-processing-applications/natural-language-inference-attention.html">15.5. 自然语言推断：使用注意力</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_natural-language-processing-applications/finetuning-bert.html">15.6. 针对序列级和词元级应用微调BERT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_natural-language-processing-applications/natural-language-inference-bert.html">15.7. 自然语言推断：微调BERT</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../chapter_appendix-tools-for-deep-learning/index.html">16. Appendix: Tools for Deep Learning</a><ul>
@@ -479,7 +484,7 @@ Show Source
     <div class="document">
         <div class="page-content" role="main">
         
-  <section id="sec-semantic-segmentation">
+  <div class="section" id="sec-semantic-segmentation">
 <span id="id1"></span><h1><span class="section-number">13.9. </span>语义分割和数据集<a class="headerlink" href="#sec-semantic-segmentation" title="Permalink to this heading">¶</a></h1>
 <p>在 <a class="reference internal" href="bounding-box.html#sec-bbox"><span class="std std-numref">13.3节</span></a>—
 <a class="reference internal" href="rcnn.html#sec-rcnn"><span class="std std-numref">13.8节</span></a>中讨论的目标检测问题中，我们一直使用方形边界框来标注和预测图像中的目标。
@@ -488,12 +493,10 @@ segmentation）问题，它重点关注于如何将图像分割成属于不同�
 与目标检测不同，语义分割可以识别并理解图像中每一个像素的内容：其语义区域的标注和预测是像素级的。
 <a class="reference internal" href="#fig-segmentation"><span class="std std-numref">图13.9.1</span></a>展示了语义分割中图像有关狗、猫和背景的标签。
 与目标检测相比，语义分割标注的像素级的边框显然更加精细。</p>
-<figure class="align-default" id="id9">
-<span id="fig-segmentation"></span><img alt="../_images/segmentation.svg" src="../_images/segmentation.svg" /><figcaption>
-<p><span class="caption-number">图13.9.1 </span><span class="caption-text">语义分割中图像有关狗、猫和背景的标签</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
-<section id="id2">
+<div class="figure align-default" id="id9">
+<span id="fig-segmentation"></span><img alt="../_images/segmentation.svg" src="../_images/segmentation.svg" /><p class="caption"><span class="caption-number">图13.9.1 </span><span class="caption-text">语义分割中图像有关狗、猫和背景的标签</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+</div>
+<div class="section" id="id2">
 <h2><span class="section-number">13.9.1. </span>图像分割和实例分割<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h2>
 <p>计算机视觉领域还有2个与语义分割相似的重要问题，即<em>图像分割</em>（image
 segmentation）和<em>实例分割</em>（instance segmentation）。
@@ -504,8 +507,8 @@ segmentation）和<em>实例分割</em>（instance segmentation）。
 <li><p><em>实例分割</em>也叫<em>同时检测并分割</em>（simultaneous detection and
 segmentation），它研究如何识别图像中各个目标实例的像素级区域。与语义分割不同，实例分割不仅需要区分语义，还要区分不同的目标实例。例如，如果图像中有两条狗，则实例分割需要区分像素属于的两条狗中的哪一条。</p></li>
 </ul>
-</section>
-<section id="pascal-voc2012">
+</div>
+<div class="section" id="pascal-voc2012">
 <h2><span class="section-number">13.9.2. </span>Pascal VOC2012 语义分割数据集<a class="headerlink" href="#pascal-voc2012" title="Permalink to this heading">¶</a></h2>
 <p>最重要的语义分割数据集之一是<a class="reference external" href="http://host.robots.ox.ac.uk/pascal/VOC/voc2012/">Pascal
 VOC2012</a>。
@@ -565,9 +568,9 @@ VOC2012</a>。
 <span class="n">d2l</span><span class="o">.</span><span class="n">show_images</span><span class="p">(</span><span class="n">imgs</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">n</span><span class="p">);</span>
 </pre></div>
 </div>
-<figure class="align-default">
+<div class="figure align-default">
 <img alt="../_images/output_semantic-segmentation-and-dataset_354524_7_0.png" src="../_images/output_semantic-segmentation-and-dataset_354524_7_0.png" />
-</figure>
+</div>
 <p>接下来，我们列举RGB颜色值和类名。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#@save</span>
 <span class="n">VOC_COLORMAP</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">128</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">128</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
@@ -625,7 +628,7 @@ VOC2012数据集中的类别索引。</p>
  <span class="s1">&#39;aeroplane&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<section id="id3">
+<div class="section" id="id3">
 <h3><span class="section-number">13.9.2.1. </span>预处理数据<a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h3>
 <p>在之前的实验，例如 <a class="reference internal" href="../chapter_convolutional-modern/alexnet.html#sec-alexnet"><span class="std std-numref">7.1节</span></a>—
 <a class="reference internal" href="../chapter_convolutional-modern/googlenet.html#sec-googlenet"><span class="std std-numref">7.4节</span></a>中，我们通过再缩放图像使其符合模型的输入形状。
@@ -650,11 +653,11 @@ VOC2012数据集中的类别索引。</p>
 <span class="n">d2l</span><span class="o">.</span><span class="n">show_images</span><span class="p">(</span><span class="n">imgs</span><span class="p">[::</span><span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="n">imgs</span><span class="p">[</span><span class="mi">1</span><span class="p">::</span><span class="mi">2</span><span class="p">],</span> <span class="mi">2</span><span class="p">,</span> <span class="n">n</span><span class="p">);</span>
 </pre></div>
 </div>
-<figure class="align-default">
+<div class="figure align-default">
 <img alt="../_images/output_semantic-segmentation-and-dataset_354524_16_0.png" src="../_images/output_semantic-segmentation-and-dataset_354524_16_0.png" />
-</figure>
-</section>
-<section id="id4">
+</div>
+</div>
+<div class="section" id="id4">
 <h3><span class="section-number">13.9.2.2. </span>自定义语义分割数据集类<a class="headerlink" href="#id4" title="Permalink to this heading">¶</a></h3>
 <p>我们通过继承高级API提供的<code class="docutils literal notranslate"><span class="pre">Dataset</span></code>类，自定义了一个语义分割数据集类<code class="docutils literal notranslate"><span class="pre">VOCSegDataset</span></code>。
 通过实现<code class="docutils literal notranslate"><span class="pre">__getitem__</span></code>函数，我们可以任意访问数据集中索引为<code class="docutils literal notranslate"><span class="pre">idx</span></code>的输入图像及其每个像素的类别索引。
@@ -693,8 +696,8 @@ VOC2012数据集中的类别索引。</p>
         <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">features</span><span class="p">)</span>
 </pre></div>
 </div>
-</section>
-<section id="id5">
+</div>
+<div class="section" id="id5">
 <h3><span class="section-number">13.9.2.3. </span>读取数据集<a class="headerlink" href="#id5" title="Permalink to this heading">¶</a></h3>
 <p>我们通过自定义的<code class="docutils literal notranslate"><span class="pre">VOCSegDataset</span></code>类来分别创建训练集和测试集的实例。
 假设我们指定随机裁剪的输出图像的形状为<span class="math notranslate nohighlight">\(320\times 480\)</span>，
@@ -752,8 +755,8 @@ VOC2012数据集中的类别索引。</p>
 <span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="mi">320</span><span class="p">,</span> <span class="mi">480</span><span class="p">)</span>
 </pre></div>
 </div>
-</section>
-<section id="id6">
+</div>
+<div class="section" id="id6">
 <h3><span class="section-number">13.9.2.4. </span>整合所有组件<a class="headerlink" href="#id6" title="Permalink to this heading">¶</a></h3>
 <p>最后，我们定义以下<code class="docutils literal notranslate"><span class="pre">load_data_voc</span></code>函数来下载并读取Pascal
 VOC2012语义分割数据集。 它返回训练集和测试集的数据迭代器。</p>
@@ -771,25 +774,25 @@ VOC2012语义分割数据集。 它返回训练集和测试集的数据迭代器
     <span class="k">return</span> <span class="n">train_iter</span><span class="p">,</span> <span class="n">num_train_batches</span><span class="p">,</span> <span class="n">test_iter</span><span class="p">,</span> <span class="n">num_test_batches</span>
 </pre></div>
 </div>
-</section>
-</section>
-<section id="id7">
+</div>
+</div>
+<div class="section" id="id7">
 <h2><span class="section-number">13.9.3. </span>小结<a class="headerlink" href="#id7" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>语义分割通过将图像划分为属于不同语义类别的区域，来识别并理解图像中像素级别的内容。</p></li>
 <li><p>语义分割的一个重要的数据集叫做Pascal VOC2012。</p></li>
 <li><p>由于语义分割的输入图像和标签在像素上一一对应，输入图像会被随机裁剪为固定尺寸而不是缩放。</p></li>
 </ul>
-</section>
-<section id="id8">
+</div>
+<div class="section" id="id8">
 <h2><span class="section-number">13.9.4. </span>练习<a class="headerlink" href="#id8" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic simple">
 <li><p>如何在自动驾驶和医疗图像诊断中应用语义分割？还能想到其他领域的应用吗？</p></li>
 <li><p>回想一下
 <a class="reference internal" href="image-augmentation.html#sec-image-augmentation"><span class="std std-numref">13.1节</span></a>中对数据增强的描述。图像分类中使用的哪种图像增强方法是难以用于语义分割的？</p></li>
 </ol>
-</section>
-</section>
+</div>
+</div>
 
 
         </div>

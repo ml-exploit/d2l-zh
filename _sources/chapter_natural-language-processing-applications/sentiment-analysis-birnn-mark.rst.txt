@@ -1,0 +1,185 @@
+
+.. raw:: latex
+
+   \diilbookstyleinputcell
+
+.. code:: ipython3
+
+    import math
+    import mlx.core as mx
+    import mlx.nn as nn
+    import mlx.optimizers as optim
+    from d2l import mlx as d2l
+    
+    # 加载 IMDB 数据
+    batch_size = 64
+    train_iter, test_iter, vocab = d2l.load_data_imdb(batch_size)
+    
+    # 多层双向 LSTM 实现
+    class MultiLayerLSTM(nn.Module):
+        def __init__(self, input_size, hidden_size, num_layers=1, bidirectional=False, dropout=0.0):
+            super().__init__()
+            self.hidden_size = hidden_size
+            self.num_layers = num_layers
+            self.bidirectional = bidirectional
+            self.dropout = dropout
+            self.num_directions = 2 if bidirectional else 1
+    
+            for i in range(num_layers):
+                in_size = input_size if i == 0 else hidden_size * self.num_directions
+                setattr(self, f'fwd_lstm_{i}', nn.LSTM(in_size, hidden_size))
+                if self.bidirectional:
+                    setattr(self, f'bwd_lstm_{i}', nn.LSTM(in_size, hidden_size))
+    
+        def __call__(self, x, state=None):
+            output = x
+            final_h, final_c = [], []
+            h_prev, c_prev = state if state is not None else (None, None)
+    
+            for i in range(self.num_layers):
+                fwd = getattr(self, f'fwd_lstm_{i}')
+                bwd = getattr(self, f'bwd_lstm_{i}') if self.bidirectional else None
+    
+                fwd_h = h_prev[i * self.num_directions] if h_prev is not None else None
+                fwd_c = c_prev[i * self.num_directions] if c_prev is not None else None
+                fwd_out, fwd_cell = fwd(output, hidden=fwd_h, cell=fwd_c)
+                fwd_last_h = fwd_out[:, -1, :]
+                fwd_last_c = fwd_cell[:, -1, :]
+    
+                if self.bidirectional:
+                    bwd_h = h_prev[i * self.num_directions + 1] if h_prev is not None else None
+                    bwd_c = c_prev[i * self.num_directions + 1] if c_prev is not None else None
+                    rev_input = output[:, ::-1, :]
+                    bwd_out, bwd_cell = bwd(rev_input, hidden=bwd_h, cell=bwd_c)
+                    bwd_out = bwd_out[:, ::-1, :]
+                    bwd_last_h = bwd_out[:, -1, :]
+                    bwd_last_c = bwd_cell[:, -1, :]
+    
+                    output = mx.concatenate([fwd_out, bwd_out], axis=-1)
+                    final_h.extend([fwd_last_h, bwd_last_h])
+                    final_c.extend([fwd_last_c, bwd_last_c])
+                else:
+                    output = fwd_out
+                    final_h.append(fwd_last_h)
+                    final_c.append(fwd_last_c)
+    
+                if self.dropout > 0.0 and i < self.num_layers - 1:
+                    output = nn.dropout(output, rate=self.dropout, deterministic=False)
+    
+            h = mx.stack(final_h, axis=0)
+            c = mx.stack(final_c, axis=0)
+            return output, (h, c)
+    
+    # BiRNN 模型
+    class BiRNN(nn.Module):
+        def __init__(self, vocab_size, embed_size, num_hiddens, num_layers, **kwargs):
+            super().__init__(**kwargs)
+            self.embedding = nn.Embedding(vocab_size, embed_size)
+            self.encoder = MultiLayerLSTM(embed_size, num_hiddens, num_layers=num_layers, bidirectional=True)
+            self.decoder = nn.Linear(4 * num_hiddens, 2)
+    
+        def __call__(self, inputs, state=None):
+            embeddings = self.embedding(inputs)  # 不要转置！(batch, seq_len, embed)
+            outputs, _ = self.encoder(embeddings)  # (batch, seq_len, hidden*2)
+    
+            # 取每个样本的首尾时间步进行拼接
+            first_step = outputs[:, 0, :]
+            last_step = outputs[:, -1, :]
+            encoding = mx.concatenate((first_step, last_step), axis=1)  # (batch, 4 * hidden)
+            outs = self.decoder(encoding)
+            
+            return outs
+    
+    # 初始化网络
+    embed_size, num_hiddens, num_layers = 100, 100, 2
+    
+    def init_weights(net):
+        for name, param in net.parameters().items():
+            if "weight" in name:
+                if len(param.shape) >= 2:
+                    # 使用 Xavier 初始化
+                    fan_in, fan_out = param.shape[-2], param.shape[-1]
+                    limit = math.sqrt(6 / (fan_in + fan_out))
+                    param[...] = mx.random.uniform(-limit, limit, shape=param.shape)
+            elif "bias" in name:
+                param[...] = 0.0
+    
+    
+    net = BiRNN(len(vocab), embed_size, num_hiddens, num_layers)
+    init_weights(net)
+    
+    # 使用预训练 GloVe 词向量
+    glove_embedding = d2l.TokenEmbedding('glove.6b.100d')
+    embeds = glove_embedding[vocab.idx_to_token]
+    net.embedding.weight = mx.array(embeds)
+    net.embedding.freeze()
+    
+    # loss 函数（先 none 后 sum）
+    loss_fn = nn.losses.cross_entropy
+    
+    # 计算 batch 数
+    def get_num_batch(iter):
+        num_batches = 0
+        for sample in iter:
+            num_batches += 1
+        iter.reset()
+        return num_batches
+    
+    # 训练过程
+    def train_step(net, X, y):
+        y_hat = net(X)
+        l = loss_fn(y_hat, y)  # (batch_size,)
+        los = mx.sum(l)        # 总 loss
+        acc = mx.sum(mx.argmax(y_hat, axis=-1) == y)
+        return los, acc
+    
+    
+    # 开始训练
+    lr, num_epochs = 0.01, 5
+    trainer = optim.Adam(learning_rate=lr)
+    num_batches = get_num_batch(train_iter)
+    d2l.train_ch13(net, train_iter, num_batches, test_iter, loss_fn, trainer, num_epochs)
+    
+    # 预测函数
+    def predict_sentiment(net, vocab, sequence):
+        sequence = mx.array(vocab[sequence.split()])
+        label = mx.argmax(net(sequence.reshape(1, -1)), axis=1)
+        return 'positive' if label == 1 else 'negative'
+    
+    # 测试预测
+    print(predict_sentiment(net, vocab, 'this movie is so great'))  # 预期 positive
+    print(predict_sentiment(net, vocab, 'this movie is so bad'))    # 预期 negative
+
+
+
+::
+
+
+    ---------------------------------------------------------------------------
+
+    AttributeError                            Traceback (most recent call last)
+
+    Cell In[2], line 5
+          3 import mlx.nn as nn
+          4 import mlx.optimizers as optim
+    ----> 5 from d2l import mlx as d2l
+          7 # 加载 IMDB 数据
+          8 batch_size = 64
+
+
+    File /opt/miniconda3/envs/d2l-zh/lib/python3.10/site-packages/d2l/mlx.py:1078
+       1070     data_iter = (
+       1071         data_iter
+       1072         .shuffle_if(True)
+       1073         .to_stream()
+       1074         .batch(batch_size)
+       1075     )
+       1076     return data_iter, src_vocab, tgt_vocab
+    -> 1078 class Encoder(d2l.Module):
+       1079     """编码器-解码器架构的基本编码器接口"""
+       1080     def __init__(self):
+
+
+    AttributeError: partially initialized module 'd2l.mlx' has no attribute 'Module' (most likely due to a circular import)
+
+

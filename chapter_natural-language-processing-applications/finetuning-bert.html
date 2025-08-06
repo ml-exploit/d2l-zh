@@ -3,13 +3,12 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     
-    <title>15.5. 针对序列级和词元级应用微调BERT &#8212; 动手学深度学习 2.0.0 documentation</title>
+    <title>15.6. 针对序列级和词元级应用微调BERT &#8212; 动手学深度学习 2.0.0 documentation</title>
 
     <link rel="stylesheet" href="../_static/material-design-lite-1.3.0/material.blue-deep_orange.min.css" type="text/css" />
     <link rel="stylesheet" href="../_static/sphinx_materialdesign_theme.css" type="text/css" />
@@ -29,8 +28,8 @@
     <link rel="shortcut icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="15.6. 自然语言推断：微调BERT" href="natural-language-inference-bert.html" />
-    <link rel="prev" title="15.4. 自然语言推断：使用注意力" href="natural-language-inference-attention.html" /> 
+    <link rel="next" title="15.7. 自然语言推断：微调BERT" href="natural-language-inference-bert.html" />
+    <link rel="prev" title="15.5. 自然语言推断：使用注意力" href="natural-language-inference-attention.html" /> 
   </head>
 <body>
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-drawer"><header class="mdl-layout__header mdl-layout__header--waterfall ">
@@ -38,7 +37,7 @@
         
         <nav class="mdl-navigation breadcrumb">
             <a class="mdl-navigation__link" href="index.html"><span class="section-number">15. </span>自然语言处理：应用</a><i class="material-icons">navigate_next</i>
-            <a class="mdl-navigation__link is-active"><span class="section-number">15.5. </span>针对序列级和词元级应用微调BERT</a>
+            <a class="mdl-navigation__link is-active"><span class="section-number">15.6. </span>针对序列级和词元级应用微调BERT</a>
         </nav>
         <div class="mdl-layout-spacer"></div>
         <nav class="mdl-navigation">
@@ -73,9 +72,9 @@ Show Source
       <div class="mdl-layout-spacer"></div>
       <nav class="mdl-navigation">
           
-              <a  class="mdl-navigation__link" href="https://zh-v2.d2l.ai/d2l-zh.pdf">
+              <a  class="mdl-navigation__link" href="https//ml-exploit.github.io/d2l-zh/download/d2l-zh-mlx.pdf">
                   <i class="fas fa-file-pdf"></i>
-                  MXNet
+                  MLX
               </a>
           
               <a  class="mdl-navigation__link" href="https://zh-v2.d2l.ai/d2l-zh-pytorch.pdf">
@@ -228,6 +227,7 @@ Show Source
 <li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/rmsprop.html">11.8. RMSProp算法</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/adadelta.html">11.9. Adadelta</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/adam.html">11.10. Adam算法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/lr-scheduler.html">11.11. 学习率调度器</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../chapter_computational-performance/index.html">12. 计算性能</a><ul class="simple">
@@ -245,8 +245,9 @@ Show Source
 <li class="toctree-l2"><a class="reference internal" href="../chapter_computer-vision/semantic-segmentation-and-dataset.html">13.9. 语义分割和数据集</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter_computer-vision/transposed-conv.html">13.10. 转置卷积</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter_computer-vision/fcn.html">13.11. 全卷积网络</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_computer-vision/kaggle-cifar10.html">13.12. 实战 Kaggle 比赛：图像分类 (CIFAR-10)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_computer-vision/kaggle-dog.html">13.13. 实战Kaggle比赛：狗的品种识别（ImageNet Dogs）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_computer-vision/neural-style.html">13.12. 风格迁移</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_computer-vision/kaggle-cifar10.html">13.13. 实战 Kaggle 比赛：图像分类 (CIFAR-10)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_computer-vision/kaggle-dog.html">13.14. 实战Kaggle比赛：狗的品种识别（ImageNet Dogs）</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../chapter_natural-language-processing-pretraining/index.html">14. 自然语言处理：预训练</a><ul>
@@ -264,11 +265,12 @@ Show Source
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">15. 自然语言处理：应用</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="sentiment-analysis-and-dataset.html">15.1. 情感分析及数据集</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sentiment-analysis-cnn.html">15.2. 情感分析：使用卷积神经网络</a></li>
-<li class="toctree-l2"><a class="reference internal" href="natural-language-inference-and-dataset.html">15.3. 自然语言推断与数据集</a></li>
-<li class="toctree-l2"><a class="reference internal" href="natural-language-inference-attention.html">15.4. 自然语言推断：使用注意力</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">15.5. 针对序列级和词元级应用微调BERT</a></li>
-<li class="toctree-l2"><a class="reference internal" href="natural-language-inference-bert.html">15.6. 自然语言推断：微调BERT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sentiment-analysis-rnn.html">15.2. 情感分析：使用循环神经网络</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sentiment-analysis-cnn.html">15.3. 情感分析：使用卷积神经网络</a></li>
+<li class="toctree-l2"><a class="reference internal" href="natural-language-inference-and-dataset.html">15.4. 自然语言推断与数据集</a></li>
+<li class="toctree-l2"><a class="reference internal" href="natural-language-inference-attention.html">15.5. 自然语言推断：使用注意力</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">15.6. 针对序列级和词元级应用微调BERT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="natural-language-inference-bert.html">15.7. 自然语言推断：微调BERT</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../chapter_appendix-tools-for-deep-learning/index.html">16. Appendix: Tools for Deep Learning</a><ul>
@@ -415,6 +417,7 @@ Show Source
 <li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/rmsprop.html">11.8. RMSProp算法</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/adadelta.html">11.9. Adadelta</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/adam.html">11.10. Adam算法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/lr-scheduler.html">11.11. 学习率调度器</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../chapter_computational-performance/index.html">12. 计算性能</a><ul class="simple">
@@ -432,8 +435,9 @@ Show Source
 <li class="toctree-l2"><a class="reference internal" href="../chapter_computer-vision/semantic-segmentation-and-dataset.html">13.9. 语义分割和数据集</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter_computer-vision/transposed-conv.html">13.10. 转置卷积</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter_computer-vision/fcn.html">13.11. 全卷积网络</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_computer-vision/kaggle-cifar10.html">13.12. 实战 Kaggle 比赛：图像分类 (CIFAR-10)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_computer-vision/kaggle-dog.html">13.13. 实战Kaggle比赛：狗的品种识别（ImageNet Dogs）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_computer-vision/neural-style.html">13.12. 风格迁移</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_computer-vision/kaggle-cifar10.html">13.13. 实战 Kaggle 比赛：图像分类 (CIFAR-10)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_computer-vision/kaggle-dog.html">13.14. 实战Kaggle比赛：狗的品种识别（ImageNet Dogs）</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../chapter_natural-language-processing-pretraining/index.html">14. 自然语言处理：预训练</a><ul>
@@ -451,11 +455,12 @@ Show Source
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">15. 自然语言处理：应用</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="sentiment-analysis-and-dataset.html">15.1. 情感分析及数据集</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sentiment-analysis-cnn.html">15.2. 情感分析：使用卷积神经网络</a></li>
-<li class="toctree-l2"><a class="reference internal" href="natural-language-inference-and-dataset.html">15.3. 自然语言推断与数据集</a></li>
-<li class="toctree-l2"><a class="reference internal" href="natural-language-inference-attention.html">15.4. 自然语言推断：使用注意力</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">15.5. 针对序列级和词元级应用微调BERT</a></li>
-<li class="toctree-l2"><a class="reference internal" href="natural-language-inference-bert.html">15.6. 自然语言推断：微调BERT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sentiment-analysis-rnn.html">15.2. 情感分析：使用循环神经网络</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sentiment-analysis-cnn.html">15.3. 情感分析：使用卷积神经网络</a></li>
+<li class="toctree-l2"><a class="reference internal" href="natural-language-inference-and-dataset.html">15.4. 自然语言推断与数据集</a></li>
+<li class="toctree-l2"><a class="reference internal" href="natural-language-inference-attention.html">15.5. 自然语言推断：使用注意力</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">15.6. 针对序列级和词元级应用微调BERT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="natural-language-inference-bert.html">15.7. 自然语言推断：微调BERT</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../chapter_appendix-tools-for-deep-learning/index.html">16. Appendix: Tools for Deep Learning</a><ul>
@@ -479,30 +484,28 @@ Show Source
     <div class="document">
         <div class="page-content" role="main">
         
-  <section id="bert">
-<span id="sec-finetuning-bert"></span><h1><span class="section-number">15.5. </span>针对序列级和词元级应用微调BERT<a class="headerlink" href="#bert" title="Permalink to this heading">¶</a></h1>
+  <div class="section" id="bert">
+<span id="sec-finetuning-bert"></span><h1><span class="section-number">15.6. </span>针对序列级和词元级应用微调BERT<a class="headerlink" href="#bert" title="Permalink to this heading">¶</a></h1>
 <p>在本章的前几节中，我们为自然语言处理应用设计了不同的模型，例如基于循环神经网络、卷积神经网络、注意力和多层感知机。这些模型在有空间或时间限制的情况下是有帮助的，但是，为每个自然语言处理任务精心设计一个特定的模型实际上是不可行的。在
 <a class="reference internal" href="../chapter_natural-language-processing-pretraining/bert.html#sec-bert"><span class="std std-numref">14.8节</span></a>中，我们介绍了一个名为BERT的预训练模型，该模型可以对广泛的自然语言处理任务进行最少的架构更改。一方面，在提出时，BERT改进了各种自然语言处理任务的技术水平。另一方面，正如在
 <a class="reference internal" href="../chapter_natural-language-processing-pretraining/bert-pretraining.html#sec-bert-pretraining"><span class="std std-numref">14.10节</span></a>中指出的那样，原始BERT模型的两个版本分别带有1.1亿和3.4亿个参数。因此，当有足够的计算资源时，我们可以考虑为下游自然语言处理应用微调BERT。</p>
 <p>下面，我们将自然语言处理应用的子集概括为序列级和词元级。在序列层次上，介绍了在单文本分类任务和文本对分类（或回归）任务中，如何将文本输入的BERT表示转换为输出标签。在词元级别，我们将简要介绍新的应用，如文本标注和问答，并说明BERT如何表示它们的输入并转换为输出标签。在微调期间，不同应用之间的BERT所需的“最小架构更改”是额外的全连接层。在下游应用的监督学习期间，额外层的参数是从零开始学习的，而预训练BERT模型中的所有参数都是微调的。</p>
-<section id="id1">
-<h2><span class="section-number">15.5.1. </span>单文本分类<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h2>
+<div class="section" id="id1">
+<h2><span class="section-number">15.6.1. </span>单文本分类<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h2>
 <p><em>单文本分类</em>将单个文本序列作为输入，并输出其分类结果。
 除了我们在这一章中探讨的情感分析之外，语言可接受性语料库（Corpus of
 Linguistic
 Acceptability，COLA）也是一个单文本分类的数据集，它的要求判断给定的句子在语法上是否可以接受。
 <span id="id2">()</span>。例如，“I should
 study.”是可以接受的，但是“I should studying.”不是可以接受的。</p>
-<figure class="align-default" id="id10">
-<span id="fig-bert-one-seq"></span><img alt="../_images/bert-one-seq.svg" src="../_images/bert-one-seq.svg" /><figcaption>
-<p><span class="caption-number">图15.5.1 </span><span class="caption-text">微调BERT用于单文本分类应用，如情感分析和测试语言可接受性（这里假设输入的单个文本有六个词元）</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
+<div class="figure align-default" id="id10">
+<span id="fig-bert-one-seq"></span><img alt="../_images/bert-one-seq.svg" src="../_images/bert-one-seq.svg" /><p class="caption"><span class="caption-number">图15.6.1 </span><span class="caption-text">微调BERT用于单文本分类应用，如情感分析和测试语言可接受性（这里假设输入的单个文本有六个词元）</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+</div>
 <p><a class="reference internal" href="../chapter_natural-language-processing-pretraining/bert.html#sec-bert"><span class="std std-numref">14.8节</span></a>描述了BERT的输入表示。BERT输入序列明确地表示单个文本和文本对，其中特殊分类标记“&lt;cls&gt;”用于序列分类，而特殊分类标记“&lt;sep&gt;”标记单个文本的结束或分隔成对文本。如
-<a class="reference internal" href="#fig-bert-one-seq"><span class="std std-numref">图15.5.1</span></a>所示，在单文本分类应用中，特殊分类标记“&lt;cls&gt;”的BERT表示对整个输入文本序列的信息进行编码。作为输入单个文本的表示，它将被送入到由全连接（稠密）层组成的小多层感知机中，以输出所有离散标签值的分布。</p>
-</section>
-<section id="id3">
-<h2><span class="section-number">15.5.2. </span>文本对分类或回归<a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h2>
+<a class="reference internal" href="#fig-bert-one-seq"><span class="std std-numref">图15.6.1</span></a>所示，在单文本分类应用中，特殊分类标记“&lt;cls&gt;”的BERT表示对整个输入文本序列的信息进行编码。作为输入单个文本的表示，它将被送入到由全连接（稠密）层组成的小多层感知机中，以输出所有离散标签值的分布。</p>
+</div>
+<div class="section" id="id3">
+<h2><span class="section-number">15.6.2. </span>文本对分类或回归<a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h2>
 <p>在本章中，我们还研究了自然语言推断。它属于<em>文本对分类</em>，这是一种对文本进行分类的应用类型。</p>
 <p>以一对文本作为输入但输出连续值，<em>语义文本相似度</em>是一个流行的“文本对回归”任务。
 这项任务评估句子的语义相似度。例如，在语义文本相似度基准数据集（Semantic
@@ -517,31 +520,27 @@ eating meat.”（“一个女人在吃肉。”），3.000分;</p></li>
 <li><p>“A woman is dancing.”（一个女人在跳舞。），“A man is
 talking.”（“一个人在说话。”），0.000分。</p></li>
 </ul>
-<figure class="align-default" id="id11">
-<span id="fig-bert-two-seqs"></span><img alt="../_images/bert-two-seqs.svg" src="../_images/bert-two-seqs.svg" /><figcaption>
-<p><span class="caption-number">图15.5.2 </span><span class="caption-text">文本对分类或回归应用的BERT微调，如自然语言推断和语义文本相似性（假设输入文本对分别有两个词元和三个词元）</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
-<p>与 <a class="reference internal" href="#fig-bert-one-seq"><span class="std std-numref">图15.5.1</span></a>中的单文本分类相比，
-<a class="reference internal" href="#fig-bert-two-seqs"><span class="std std-numref">图15.5.2</span></a>中的文本对分类的BERT微调在输入表示上有所不同。对于文本对回归任务（如语义文本相似性），可以应用细微的更改，例如输出连续的标签值和使用均方损失：它们在回归中很常见。</p>
-</section>
-<section id="id5">
-<h2><span class="section-number">15.5.3. </span>文本标注<a class="headerlink" href="#id5" title="Permalink to this heading">¶</a></h2>
+<div class="figure align-default" id="id11">
+<span id="fig-bert-two-seqs"></span><img alt="../_images/bert-two-seqs.svg" src="../_images/bert-two-seqs.svg" /><p class="caption"><span class="caption-number">图15.6.2 </span><span class="caption-text">文本对分类或回归应用的BERT微调，如自然语言推断和语义文本相似性（假设输入文本对分别有两个词元和三个词元）</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
+</div>
+<p>与 <a class="reference internal" href="#fig-bert-one-seq"><span class="std std-numref">图15.6.1</span></a>中的单文本分类相比，
+<a class="reference internal" href="#fig-bert-two-seqs"><span class="std std-numref">图15.6.2</span></a>中的文本对分类的BERT微调在输入表示上有所不同。对于文本对回归任务（如语义文本相似性），可以应用细微的更改，例如输出连续的标签值和使用均方损失：它们在回归中很常见。</p>
+</div>
+<div class="section" id="id5">
+<h2><span class="section-number">15.6.3. </span>文本标注<a class="headerlink" href="#id5" title="Permalink to this heading">¶</a></h2>
 <p>现在让我们考虑词元级任务，比如<em>文本标注</em>（text
 tagging），其中每个词元都被分配了一个标签。在文本标注任务中，<em>词性标注</em>为每个单词分配词性标记（例如，形容词和限定词）。
 根据单词在句子中的作用。如，在Penn树库II标注集中，句子“John Smith‘s car
 is new”应该被标记为“NNP（名词，专有单数）NNP
 POS（所有格结尾）NN（名词，单数或质量）VB（动词，基本形式）JJ（形容词）”。</p>
-<figure class="align-default" id="id12">
-<span id="fig-bert-tagging"></span><img alt="../_images/bert-tagging.svg" src="../_images/bert-tagging.svg" /><figcaption>
-<p><span class="caption-number">图15.5.3 </span><span class="caption-text">文本标记应用的BERT微调，如词性标记。假设输入的单个文本有六个词元。</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
-<p><a class="reference internal" href="#fig-bert-tagging"><span class="std std-numref">图15.5.3</span></a>中说明了文本标记应用的BERT微调。与
-<a class="reference internal" href="#fig-bert-one-seq"><span class="std std-numref">图15.5.1</span></a>相比，唯一的区别在于，在文本标注中，输入文本的<em>每个词元</em>的BERT表示被送到相同的额外全连接层中，以输出词元的标签，例如词性标签。</p>
-</section>
-<section id="id6">
-<h2><span class="section-number">15.5.4. </span>问答<a class="headerlink" href="#id6" title="Permalink to this heading">¶</a></h2>
+<div class="figure align-default" id="id12">
+<span id="fig-bert-tagging"></span><img alt="../_images/bert-tagging.svg" src="../_images/bert-tagging.svg" /><p class="caption"><span class="caption-number">图15.6.3 </span><span class="caption-text">文本标记应用的BERT微调，如词性标记。假设输入的单个文本有六个词元。</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
+</div>
+<p><a class="reference internal" href="#fig-bert-tagging"><span class="std std-numref">图15.6.3</span></a>中说明了文本标记应用的BERT微调。与
+<a class="reference internal" href="#fig-bert-one-seq"><span class="std std-numref">图15.6.1</span></a>相比，唯一的区别在于，在文本标注中，输入文本的<em>每个词元</em>的BERT表示被送到相同的额外全连接层中，以输出词元的标签，例如词性标签。</p>
+</div>
+<div class="section" id="id6">
+<h2><span class="section-number">15.6.4. </span>问答<a class="headerlink" href="#id6" title="Permalink to this heading">¶</a></h2>
 <p>作为另一个词元级应用，<em>问答</em>反映阅读理解能力。
 例如，斯坦福问答数据集（Stanford Question Answering Dataset，SQuAD
 v1.1）由阅读段落和问题组成，其中每个问题的答案只是段落中的一段文本（文本片段）
@@ -554,24 +553,22 @@ say that N95 respirator masks can guard against the
 virus?”（“谁说N95口罩可以预防病毒？”）。答案应该是文章中的文本片段“mask
 makers”（“口罩制造商”）。因此，SQuAD
 v1.1的目标是在给定问题和段落的情况下预测段落中文本片段的开始和结束。</p>
-<figure class="align-default" id="id13">
-<span id="fig-bert-qa"></span><img alt="../_images/bert-qa.svg" src="../_images/bert-qa.svg" /><figcaption>
-<p><span class="caption-number">图15.5.4 </span><span class="caption-text">对问答进行BERT微调（假设输入文本对分别有两个和三个词元）</span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
+<div class="figure align-default" id="id13">
+<span id="fig-bert-qa"></span><img alt="../_images/bert-qa.svg" src="../_images/bert-qa.svg" /><p class="caption"><span class="caption-number">图15.6.4 </span><span class="caption-text">对问答进行BERT微调（假设输入文本对分别有两个和三个词元）</span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
+</div>
 <p>为了微调BERT进行问答，在BERT的输入中，将问题和段落分别作为第一个和第二个文本序列。为了预测文本片段开始的位置，相同的额外的全连接层将把来自位置<span class="math notranslate nohighlight">\(i\)</span>的任何词元的BERT表示转换成标量分数<span class="math notranslate nohighlight">\(s_i\)</span>。文章中所有词元的分数还通过softmax转换成概率分布，从而为文章中的每个词元位置<span class="math notranslate nohighlight">\(i\)</span>分配作为文本片段开始的概率<span class="math notranslate nohighlight">\(p_i\)</span>。预测文本片段的结束与上面相同，只是其额外的全连接层中的参数与用于预测开始位置的参数无关。当预测结束时，位置<span class="math notranslate nohighlight">\(i\)</span>的词元由相同的全连接层变换成标量分数<span class="math notranslate nohighlight">\(e_i\)</span>。
-<a class="reference internal" href="#fig-bert-qa"><span class="std std-numref">图15.5.4</span></a>描述了用于问答的微调BERT。</p>
+<a class="reference internal" href="#fig-bert-qa"><span class="std std-numref">图15.6.4</span></a>描述了用于问答的微调BERT。</p>
 <p>对于问答，监督学习的训练目标就像最大化真实值的开始和结束位置的对数似然一样简单。当预测片段时，我们可以计算从位置<span class="math notranslate nohighlight">\(i\)</span>到位置<span class="math notranslate nohighlight">\(j\)</span>的有效片段的分数<span class="math notranslate nohighlight">\(s_i + e_j\)</span>（<span class="math notranslate nohighlight">\(i \leq j\)</span>），并输出分数最高的跨度。</p>
-</section>
-<section id="id8">
-<h2><span class="section-number">15.5.5. </span>小结<a class="headerlink" href="#id8" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="id8">
+<h2><span class="section-number">15.6.5. </span>小结<a class="headerlink" href="#id8" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>对于序列级和词元级自然语言处理应用，BERT只需要最小的架构改变（额外的全连接层），如单个文本分类（例如，情感分析和测试语言可接受性）、文本对分类或回归（例如，自然语言推断和语义文本相似性）、文本标记（例如，词性标记）和问答。</p></li>
 <li><p>在下游应用的监督学习期间，额外层的参数是从零开始学习的，而预训练BERT模型中的所有参数都是微调的。</p></li>
 </ul>
-</section>
-<section id="id9">
-<h2><span class="section-number">15.5.6. </span>练习<a class="headerlink" href="#id9" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="id9">
+<h2><span class="section-number">15.6.6. </span>练习<a class="headerlink" href="#id9" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic simple">
 <li><p>让我们为新闻文章设计一个搜索引擎算法。当系统接收到查询（例如，“冠状病毒爆发期间的石油行业”）时，它应该返回与该查询最相关的新闻文章的排序列表。假设我们有一个巨大的新闻文章池和大量的查询。为了简化问题，假设为每个查询标记了最相关的文章。如何在算法设计中应用负采样（见
 <a class="reference internal" href="../chapter_natural-language-processing-pretraining/approx-training.html#subsec-negative-sampling"><span class="std std-numref">14.2.1节</span></a>）和BERT？</p></li>
@@ -579,8 +576,8 @@ v1.1的目标是在给定问题和段落的情况下预测段落中文本片段�
 <li><p>我们能在机器翻译中利用BERT吗？</p></li>
 </ol>
 <p><a class="reference external" href="https://discuss.d2l.ai/t/5729">Discussions</a></p>
-</section>
-</section>
+</div>
+</div>
 
 
         </div>
@@ -591,13 +588,13 @@ v1.1的目标是在给定问题和段落的情况下预测段落中文本片段�
       <span class="caption-text">Table Of Contents</span>
     </p>
     <ul>
-<li><a class="reference internal" href="#">15.5. 针对序列级和词元级应用微调BERT</a><ul>
-<li><a class="reference internal" href="#id1">15.5.1. 单文本分类</a></li>
-<li><a class="reference internal" href="#id3">15.5.2. 文本对分类或回归</a></li>
-<li><a class="reference internal" href="#id5">15.5.3. 文本标注</a></li>
-<li><a class="reference internal" href="#id6">15.5.4. 问答</a></li>
-<li><a class="reference internal" href="#id8">15.5.5. 小结</a></li>
-<li><a class="reference internal" href="#id9">15.5.6. 练习</a></li>
+<li><a class="reference internal" href="#">15.6. 针对序列级和词元级应用微调BERT</a><ul>
+<li><a class="reference internal" href="#id1">15.6.1. 单文本分类</a></li>
+<li><a class="reference internal" href="#id3">15.6.2. 文本对分类或回归</a></li>
+<li><a class="reference internal" href="#id5">15.6.3. 文本标注</a></li>
+<li><a class="reference internal" href="#id6">15.6.4. 问答</a></li>
+<li><a class="reference internal" href="#id8">15.6.5. 小结</a></li>
+<li><a class="reference internal" href="#id9">15.6.6. 练习</a></li>
 </ul>
 </li>
 </ul>
@@ -612,14 +609,14 @@ v1.1的目标是在给定问题和段落的情况下预测段落中文本片段�
          <i class="pagenation-arrow-L fas fa-arrow-left fa-lg"></i>
          <div class="pagenation-text">
             <span class="pagenation-direction">Previous</span>
-            <div>15.4. 自然语言推断：使用注意力</div>
+            <div>15.5. 自然语言推断：使用注意力</div>
          </div>
      </a>
      <a id="button-next" href="natural-language-inference-bert.html" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored" role="botton" accesskey="N">
          <i class="pagenation-arrow-R fas fa-arrow-right fa-lg"></i>
         <div class="pagenation-text">
             <span class="pagenation-direction">Next</span>
-            <div>15.6. 自然语言推断：微调BERT</div>
+            <div>15.7. 自然语言推断：微调BERT</div>
         </div>
      </a>
   </div>

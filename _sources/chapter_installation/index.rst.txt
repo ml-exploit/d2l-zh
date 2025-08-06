@@ -15,7 +15,7 @@ Notebook、相关库以及运行本书所需的代码，以快速入门并获得
 3.x的\ `Miniconda <https://conda.io/en/latest/miniconda.html>`__\ 。
 如果已安装conda，则可以跳过以下步骤。访问Miniconda网站，根据Python3.x版本确定适合的版本。
 
-如果我们使用macOS，假设Python版本是3.9（我们的测试版本），将下载名称包含字符串“MacOSX”的bash脚本，并执行以下操作：
+如果我们使用macOS，假设Python版本是3.10（我们的测试版本），将下载名称包含字符串“MacOSX”的bash脚本，并执行以下操作：
 
 .. raw:: latex
 
@@ -23,10 +23,10 @@ Notebook、相关库以及运行本书所需的代码，以快速入门并获得
 
 .. code:: bash
 
-   # 以Intel处理器为例，文件名可能会更改
-   sh Miniconda3-py39_4.12.0-MacOSX-x86_64.sh -b
+   # 以Apple Silicon处理器为例，文件名可能会更改
+   sh Miniconda3-latest-MacOSX-arm64.sh -b
 
-如果我们使用Linux，假设Python版本是3.9（我们的测试版本），将下载名称包含字符串“Linux”的bash脚本，并执行以下操作：
+如果我们使用Linux，假设Python版本是3.10（我们的测试版本），将下载名称包含字符串“Linux”的bash脚本，并执行以下操作：
 
 .. raw:: latex
 
@@ -35,7 +35,7 @@ Notebook、相关库以及运行本书所需的代码，以快速入门并获得
 .. code:: bash
 
    # 文件名可能会更改
-   sh Miniconda3-py39_4.12.0-Linux-x86_64.sh -b
+   sh Miniconda3-latest-Linux-x86_64.sh -b
 
 接下来，初始化终端Shell，以便我们可以直接运行\ ``conda``\ 。
 
@@ -55,7 +55,7 @@ Notebook、相关库以及运行本书所需的代码，以快速入门并获得
 
 .. code:: bash
 
-   conda create --name d2l python=3.9 -y
+   conda create --name d2l python=3.10 -y
 
 现在激活 ``d2l`` 环境：
 
@@ -75,6 +75,19 @@ Notebook、相关库以及运行本书所需的代码，以快速入门并获得
 GPU并已安装\ `CUDA <https://developer.nvidia.com/cuda-downloads>`__\ 。
 如果机器没有任何GPU，没有必要担心，因为CPU在前几章完全够用。
 但是，如果想流畅地学习全部章节，请提早获取GPU并且安装深度学习框架的GPU版本。
+基于Apple Silicon的Mac系列产品，已经集成了GPU,
+支持PyTorch和MLX的硬件加速。
+
+我们可以按如下方式安装MLX：
+
+.. raw:: latex
+
+   \diilbookstyleinputcell
+
+.. code:: bash
+
+   pip install mlx
+   pip install mlx-data
 
 我们的下一步是安装\ ``d2l``\ 包，以方便调取本书中经常使用的函数和类：
 
@@ -84,13 +97,27 @@ GPU并已安装\ `CUDA <https://developer.nvidia.com/cuda-downloads>`__\ 。
 
 .. code:: bash
 
-   pip install d2l==0.17.6
+   pip install d2l
 
 下载 D2L Notebook
 -----------------
 
 接下来，需要下载这本书的代码。 可以点击本书HTML页面顶部的“Jupyter
 记事本”选项下载后解压代码，或者可以按照如下方式进行下载：
+
+.. raw:: latex
+
+   \diilbookstyleinputcell
+
+.. code:: bash
+
+   mkdir d2l-zh && cd d2l-zh
+   ## todo
+   curl https://zh-v2.d2l.ai/d2l-zh-2.0.0.zip -o d2l-zh.zip
+   unzip d2l-zh.zip && rm d2l-zh.zip
+   cd pytorch
+
+注意：如果没有安装\ ``unzip``\ ，则可以通过运行\ ``sudo apt install unzip``\ 进行安装。
 
 安装完成后我们可以通过运行以下命令打开Jupyter笔记本（在Window系统的命令行窗口中运行以下命令前，需先将当前路径定位到刚下载的本书代码解压后的目录）：
 

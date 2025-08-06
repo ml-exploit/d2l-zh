@@ -10,9 +10,9 @@
 对下一个输出进行建模。 虽然这是一个典型情景，但不是唯一的。
 还可能发生什么其它的情况呢？ 我们考虑以下三个在文本序列中填空的任务。
 
--  我\ ``___``\ 。
--  我\ ``___``\ 饿了。
--  我\ ``___``\ 饿了，我可以吃半头猪。
+- 我\ ``___``\ 。
+- 我\ ``___``\ 饿了。
+- 我\ ``___``\ 饿了，我可以吃半头猪。
 
 根据可获得的信息量，我们可以用不同的词填空，
 如“很高兴”（“happy”）、“不”（“not”）和“非常”（“very”）。
@@ -164,8 +164,8 @@
 （样本数\ :math:`n`\ ，每个示例中的输入数\ :math:`d`\ ），
 并且令隐藏层激活函数为\ :math:`\phi`\ 。
 在双向架构中，我们设该时间步的前向和反向隐状态分别为
-:math:`\overrightarrow{\mathbf{H}}_t \in \mathbb{R}^{n \times h}`\ 和
-:math:`\overleftarrow{\mathbf{H}}_t \in \mathbb{R}^{n \times h}`\ ，
+:math:`\overrightarrow{\mathbf{H}}_t  \in \mathbb{R}^{n \times h}`\ 和
+:math:`\overleftarrow{\mathbf{H}}_t  \in \mathbb{R}^{n \times h}`\ ，
 其中\ :math:`h`\ 是隐藏单元的数目。 前向和反向隐状态的更新如下：
 
 .. math::
@@ -240,8 +240,9 @@
     # 通过设置“bidirective=True”来定义双向LSTM模型
     vocab_size, num_hiddens, num_layers = len(vocab), 256, 2
     num_inputs = vocab_size
-    lstm_layer = nn.LSTM(num_inputs, num_hiddens, num_layers)
-    model = d2l.RNNModel(lstm_layer, len(vocab))
+    
+    lstm_layer = d2l.MultiLayerLSTM(num_inputs, num_hiddens, num_layers, bidirectional=True)
+    model = d2l.RNNModel(lstm_layer, len(vocab), bidirectional=True)
     # 训练模型
     num_epochs, lr = 500, 1
     d2l.train_ch8(model, train_iter, vocab, lr, num_epochs)
@@ -254,9 +255,9 @@
 .. parsed-literal::
     :class: output
 
-    困惑度 1.0, 109188.3 词元/秒
-    time travelleryou can show black is white by argument said filby
-    travelleryou can show black is white by argument said filby
+    困惑度 1.1, 34680.7 词元/秒
+    time travelleraccccccccccccccccccccccccccccccccccccccccccccccccc
+    travelleraccccccccccccccccccccccccccccccccccccccccccccccccc
 
 
 
@@ -269,10 +270,10 @@
 小结
 ----
 
--  在双向循环神经网络中，每个时间步的隐状态由当前时间步的前后数据同时决定。
--  双向循环神经网络与概率图模型中的“前向-后向”算法具有相似性。
--  双向循环神经网络主要用于序列编码和给定双向上下文的观测估计。
--  由于梯度链更长，因此双向循环神经网络的训练代价非常高。
+- 在双向循环神经网络中，每个时间步的隐状态由当前时间步的前后数据同时决定。
+- 双向循环神经网络与概率图模型中的“前向-后向”算法具有相似性。
+- 双向循环神经网络主要用于序列编码和给定双向上下文的观测估计。
+- 由于梯度链更长，因此双向循环神经网络的训练代价非常高。
 
 练习
 ----

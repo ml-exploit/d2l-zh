@@ -3,8 +3,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -29,7 +28,7 @@
     <link rel="shortcut icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="13.12. 实战 Kaggle 比赛：图像分类 (CIFAR-10)" href="kaggle-cifar10.html" />
+    <link rel="next" title="13.12. 风格迁移" href="neural-style.html" />
     <link rel="prev" title="13.10. 转置卷积" href="transposed-conv.html" /> 
   </head>
 <body>
@@ -73,9 +72,9 @@ Show Source
       <div class="mdl-layout-spacer"></div>
       <nav class="mdl-navigation">
           
-              <a  class="mdl-navigation__link" href="https://zh-v2.d2l.ai/d2l-zh.pdf">
+              <a  class="mdl-navigation__link" href="https//ml-exploit.github.io/d2l-zh/download/d2l-zh-mlx.pdf">
                   <i class="fas fa-file-pdf"></i>
-                  MXNet
+                  MLX
               </a>
           
               <a  class="mdl-navigation__link" href="https://zh-v2.d2l.ai/d2l-zh-pytorch.pdf">
@@ -228,6 +227,7 @@ Show Source
 <li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/rmsprop.html">11.8. RMSProp算法</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/adadelta.html">11.9. Adadelta</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/adam.html">11.10. Adam算法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/lr-scheduler.html">11.11. 学习率调度器</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../chapter_computational-performance/index.html">12. 计算性能</a><ul class="simple">
@@ -245,8 +245,9 @@ Show Source
 <li class="toctree-l2"><a class="reference internal" href="semantic-segmentation-and-dataset.html">13.9. 语义分割和数据集</a></li>
 <li class="toctree-l2"><a class="reference internal" href="transposed-conv.html">13.10. 转置卷积</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">13.11. 全卷积网络</a></li>
-<li class="toctree-l2"><a class="reference internal" href="kaggle-cifar10.html">13.12. 实战 Kaggle 比赛：图像分类 (CIFAR-10)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="kaggle-dog.html">13.13. 实战Kaggle比赛：狗的品种识别（ImageNet Dogs）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="neural-style.html">13.12. 风格迁移</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kaggle-cifar10.html">13.13. 实战 Kaggle 比赛：图像分类 (CIFAR-10)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kaggle-dog.html">13.14. 实战Kaggle比赛：狗的品种识别（ImageNet Dogs）</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../chapter_natural-language-processing-pretraining/index.html">14. 自然语言处理：预训练</a><ul>
@@ -264,11 +265,12 @@ Show Source
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../chapter_natural-language-processing-applications/index.html">15. 自然语言处理：应用</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../chapter_natural-language-processing-applications/sentiment-analysis-and-dataset.html">15.1. 情感分析及数据集</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_natural-language-processing-applications/sentiment-analysis-cnn.html">15.2. 情感分析：使用卷积神经网络</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_natural-language-processing-applications/natural-language-inference-and-dataset.html">15.3. 自然语言推断与数据集</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_natural-language-processing-applications/natural-language-inference-attention.html">15.4. 自然语言推断：使用注意力</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_natural-language-processing-applications/finetuning-bert.html">15.5. 针对序列级和词元级应用微调BERT</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_natural-language-processing-applications/natural-language-inference-bert.html">15.6. 自然语言推断：微调BERT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_natural-language-processing-applications/sentiment-analysis-rnn.html">15.2. 情感分析：使用循环神经网络</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_natural-language-processing-applications/sentiment-analysis-cnn.html">15.3. 情感分析：使用卷积神经网络</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_natural-language-processing-applications/natural-language-inference-and-dataset.html">15.4. 自然语言推断与数据集</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_natural-language-processing-applications/natural-language-inference-attention.html">15.5. 自然语言推断：使用注意力</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_natural-language-processing-applications/finetuning-bert.html">15.6. 针对序列级和词元级应用微调BERT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_natural-language-processing-applications/natural-language-inference-bert.html">15.7. 自然语言推断：微调BERT</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../chapter_appendix-tools-for-deep-learning/index.html">16. Appendix: Tools for Deep Learning</a><ul>
@@ -415,6 +417,7 @@ Show Source
 <li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/rmsprop.html">11.8. RMSProp算法</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/adadelta.html">11.9. Adadelta</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/adam.html">11.10. Adam算法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_optimization/lr-scheduler.html">11.11. 学习率调度器</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../chapter_computational-performance/index.html">12. 计算性能</a><ul class="simple">
@@ -432,8 +435,9 @@ Show Source
 <li class="toctree-l2"><a class="reference internal" href="semantic-segmentation-and-dataset.html">13.9. 语义分割和数据集</a></li>
 <li class="toctree-l2"><a class="reference internal" href="transposed-conv.html">13.10. 转置卷积</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">13.11. 全卷积网络</a></li>
-<li class="toctree-l2"><a class="reference internal" href="kaggle-cifar10.html">13.12. 实战 Kaggle 比赛：图像分类 (CIFAR-10)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="kaggle-dog.html">13.13. 实战Kaggle比赛：狗的品种识别（ImageNet Dogs）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="neural-style.html">13.12. 风格迁移</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kaggle-cifar10.html">13.13. 实战 Kaggle 比赛：图像分类 (CIFAR-10)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kaggle-dog.html">13.14. 实战Kaggle比赛：狗的品种识别（ImageNet Dogs）</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../chapter_natural-language-processing-pretraining/index.html">14. 自然语言处理：预训练</a><ul>
@@ -451,11 +455,12 @@ Show Source
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../chapter_natural-language-processing-applications/index.html">15. 自然语言处理：应用</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../chapter_natural-language-processing-applications/sentiment-analysis-and-dataset.html">15.1. 情感分析及数据集</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_natural-language-processing-applications/sentiment-analysis-cnn.html">15.2. 情感分析：使用卷积神经网络</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_natural-language-processing-applications/natural-language-inference-and-dataset.html">15.3. 自然语言推断与数据集</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_natural-language-processing-applications/natural-language-inference-attention.html">15.4. 自然语言推断：使用注意力</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_natural-language-processing-applications/finetuning-bert.html">15.5. 针对序列级和词元级应用微调BERT</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../chapter_natural-language-processing-applications/natural-language-inference-bert.html">15.6. 自然语言推断：微调BERT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_natural-language-processing-applications/sentiment-analysis-rnn.html">15.2. 情感分析：使用循环神经网络</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_natural-language-processing-applications/sentiment-analysis-cnn.html">15.3. 情感分析：使用卷积神经网络</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_natural-language-processing-applications/natural-language-inference-and-dataset.html">15.4. 自然语言推断与数据集</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_natural-language-processing-applications/natural-language-inference-attention.html">15.5. 自然语言推断：使用注意力</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_natural-language-processing-applications/finetuning-bert.html">15.6. 针对序列级和词元级应用微调BERT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_natural-language-processing-applications/natural-language-inference-bert.html">15.7. 自然语言推断：微调BERT</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../chapter_appendix-tools-for-deep-learning/index.html">16. Appendix: Tools for Deep Learning</a><ul>
@@ -479,7 +484,7 @@ Show Source
     <div class="document">
         <div class="page-content" role="main">
         
-  <section id="sec-fcn">
+  <div class="section" id="sec-fcn">
 <span id="id1"></span><h1><span class="section-number">13.11. </span>全卷积网络<a class="headerlink" href="#sec-fcn" title="Permalink to this heading">¶</a></h1>
 <p>如
 <a class="reference internal" href="semantic-segmentation-and-dataset.html#sec-semantic-segmentation"><span class="std std-numref">13.9节</span></a>中所介绍的那样，语义分割是对图像中的每个像素分类。
@@ -501,17 +506,15 @@ convolution）实现的。
 <span class="kn">from</span><span class="w"> </span><span class="nn">d2l</span><span class="w"> </span><span class="kn">import</span> <span class="n">mlx</span> <span class="k">as</span> <span class="n">d2l</span>
 </pre></div>
 </div>
-<section id="id3">
+<div class="section" id="id3">
 <h2><span class="section-number">13.11.1. </span>构造模型<a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h2>
 <p>下面我们了解一下全卷积网络模型最基本的设计。 如
 <a class="reference internal" href="#fig-fcn"><span class="std std-numref">图13.11.1</span></a>所示，全卷积网络先使用卷积神经网络抽取图像特征，然后通过<span class="math notranslate nohighlight">\(1\times 1\)</span>卷积层将通道数变换为类别个数，最后在
 <a class="reference internal" href="transposed-conv.html#sec-transposed-conv"><span class="std std-numref">13.10节</span></a>中通过转置卷积层将特征图的高和宽变换为输入图像的尺寸。
 因此，模型输出与输入图像的高和宽相同，且最终输出通道包含了该空间位置像素的类别预测。</p>
-<figure class="align-default" id="id11">
-<span id="fig-fcn"></span><img alt="../_images/fcn.svg" src="../_images/fcn.svg" /><figcaption>
-<p><span class="caption-number">图13.11.1 </span><span class="caption-text">全卷积网络</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
+<div class="figure align-default" id="id11">
+<span id="fig-fcn"></span><img alt="../_images/fcn.svg" src="../_images/fcn.svg" /><p class="caption"><span class="caption-number">图13.11.1 </span><span class="caption-text">全卷积网络</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
+</div>
 <p>下面，我们使用在ImageNet数据集上预训练的ResNet-18模型来提取图像特征，并将该网络记为<code class="docutils literal notranslate"><span class="pre">pretrained_net</span></code>。
 ResNet-18模型的最后几层包括全局平均汇聚层和全连接层，然而全卷积网络中不需要它们。</p>
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pretrained_net</span> <span class="o">=</span> <span class="n">create_model</span><span class="p">(</span><span class="s2">&quot;resnet18&quot;</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -572,8 +575,8 @@ VOC2012数据集的类数（21类）。
 <span class="p">)</span>
 </pre></div>
 </div>
-</section>
-<section id="id4">
+</div>
+<div class="section" id="id4">
 <h2><span class="section-number">13.11.2. </span>初始化转置卷积层<a class="headerlink" href="#id4" title="Permalink to this heading">¶</a></h2>
 <p>在图像处理中，我们有时需要将图像放大，即<em>上采样</em>（upsampling）。
 <em>双线性插值</em>（bilinear interpolation）
@@ -642,8 +645,8 @@ VOC2012数据集的类数（21类）。
 <span class="n">output</span> <span class="n">image</span> <span class="n">shape</span><span class="p">:</span> <span class="p">(</span><span class="mi">1122</span><span class="p">,</span> <span class="mi">1456</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 </pre></div>
 </div>
-<figure class="align-default">
-<img alt="../_images/output_fcn_8421ff_17_1.svg" src="../_images/output_fcn_8421ff_17_1.svg" /></figure>
+<div class="figure align-default">
+<img alt="../_images/output_fcn_8421ff_17_1.svg" src="../_images/output_fcn_8421ff_17_1.svg" /></div>
 <p>全卷积网络用双线性插值的上采样初始化转置卷积层。对于<span class="math notranslate nohighlight">\(1\times 1\)</span>卷积层，我们使用Xavier初始化参数。</p>
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># bilinear_kernel 函数返回的权重形状是 (in_channels, out_channels, kernel_size, kernel_size)</span>
 <span class="n">W</span> <span class="o">=</span> <span class="n">bilinear_kernel</span><span class="p">(</span><span class="n">num_classes</span><span class="p">,</span> <span class="n">num_classes</span><span class="p">,</span> <span class="mi">64</span><span class="p">)</span>
@@ -915,8 +918,8 @@ VOC2012数据集的类数（21类）。
          <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.000244141</span><span class="p">]]]],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">float32</span><span class="p">)</span>
 </pre></div>
 </div>
-</section>
-<section id="id5">
+</div>
+<div class="section" id="id5">
 <h2><span class="section-number">13.11.3. </span>读取数据集<a class="headerlink" href="#id5" title="Permalink to this heading">¶</a></h2>
 <p>我们用
 <a class="reference internal" href="semantic-segmentation-and-dataset.html#sec-semantic-segmentation"><span class="std std-numref">13.9节</span></a>中介绍的语义分割读取数据集。
@@ -929,8 +932,8 @@ VOC2012数据集的类数（21类）。
 <span class="n">read</span> <span class="mi">1078</span> <span class="n">examples</span>
 </pre></div>
 </div>
-</section>
-<section id="id6">
+</div>
+<div class="section" id="id6">
 <h2><span class="section-number">13.11.4. </span>训练<a class="headerlink" href="#id6" title="Permalink to this heading">¶</a></h2>
 <p>现在我们可以训练全卷积网络了。
 这里的损失函数和准确率计算与图像分类中的并没有本质上的不同，因为我们使用转置卷积层的通道来预测像素的类别，所以需要在损失计算中指定通道维。
@@ -941,8 +944,8 @@ VOC2012数据集的类数（21类）。
 <span class="n">d2l</span><span class="o">.</span><span class="n">train_ch13</span><span class="p">(</span><span class="n">net</span><span class="p">,</span> <span class="n">train_iter</span><span class="p">,</span> <span class="n">num_train_batches</span><span class="p">,</span> <span class="n">test_iter</span><span class="p">,</span> <span class="n">loss</span><span class="p">,</span> <span class="n">trainer</span><span class="p">,</span> <span class="n">num_epochs</span><span class="p">)</span>
 </pre></div>
 </div>
-</section>
-<section id="id7">
+</div>
+<div class="section" id="id7">
 <h2><span class="section-number">13.11.5. </span>预测<a class="headerlink" href="#id7" title="Permalink to this heading">¶</a></h2>
 <p>在预测时，我们需要将输入图像在各个通道做标准化，并转成卷积神经网络所需要的四维输入格式。</p>
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">predict</span><span class="p">(</span><span class="n">img</span><span class="p">):</span>
@@ -997,17 +1000,17 @@ VOC2012数据集的类数（21类）。
 <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">320</span><span class="p">,</span> <span class="mi">480</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 </pre></div>
 </div>
-<figure class="align-default">
-<img alt="../_images/output_fcn_8421ff_29_1.svg" src="../_images/output_fcn_8421ff_29_1.svg" /></figure>
-</section>
-<section id="id8">
+<div class="figure align-default">
+<img alt="../_images/output_fcn_8421ff_29_1.svg" src="../_images/output_fcn_8421ff_29_1.svg" /></div>
+</div>
+<div class="section" id="id8">
 <h2><span class="section-number">13.11.6. </span>小结<a class="headerlink" href="#id8" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>全卷积网络先使用卷积神经网络抽取图像特征，然后通过<span class="math notranslate nohighlight">\(1\times 1\)</span>卷积层将通道数变换为类别个数，最后通过转置卷积层将特征图的高和宽变换为输入图像的尺寸。</p></li>
 <li><p>在全卷积网络中，我们可以将转置卷积层初始化为双线性插值的上采样。</p></li>
 </ul>
-</section>
-<section id="id9">
+</div>
+<div class="section" id="id9">
 <h2><span class="section-number">13.11.7. </span>练习<a class="headerlink" href="#id9" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic simple">
 <li><p>如果将转置卷积层改用Xavier随机初始化，结果有什么变化？</p></li>
@@ -1016,8 +1019,8 @@ VOC2012数据集的类数（21类）。
 <li><p>最初的全卷积网络的论文中
 <span id="id10">()</span>还使用了某些卷积神经网络中间层的输出。试着实现这个想法。</p></li>
 </ol>
-</section>
-</section>
+</div>
+</div>
 
 
         </div>
@@ -1053,11 +1056,11 @@ VOC2012数据集的类数（21类）。
             <div>13.10. 转置卷积</div>
          </div>
      </a>
-     <a id="button-next" href="kaggle-cifar10.html" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored" role="botton" accesskey="N">
+     <a id="button-next" href="neural-style.html" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored" role="botton" accesskey="N">
          <i class="pagenation-arrow-R fas fa-arrow-right fa-lg"></i>
         <div class="pagenation-text">
             <span class="pagenation-direction">Next</span>
-            <div>13.12. 实战 Kaggle 比赛：图像分类 (CIFAR-10)</div>
+            <div>13.12. 风格迁移</div>
         </div>
      </a>
   </div>

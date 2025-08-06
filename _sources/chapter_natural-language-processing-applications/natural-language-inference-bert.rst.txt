@@ -70,7 +70,49 @@
 .. parsed-literal::
     :class: output
 
-    /Users/mdsadmin/.cache/huggingface/hub/models--d2l-mlx--bert_mlx/snapshots/38a4af2213dbe60e53cff34675aa23ccc53e1b82/bert_small.safetensors
+    Xet Storage is enabled for this repo, but the 'hf_xet' package is not installed. Falling back to regular HTTP download. For better performance, install the package with: `pip install huggingface_hub[hf_xet]` or `pip install hf_xet`
+
+
+
+.. raw:: latex
+
+   \diilbookstyleoutputcell
+
+.. parsed-literal::
+    :class: output
+
+    bert_base.safetensors:   0%|          | 0.00/715M [00:00<?, ?B/s]
+
+
+.. raw:: latex
+
+   \diilbookstyleoutputcell
+
+.. parsed-literal::
+    :class: output
+
+    Xet Storage is enabled for this repo, but the 'hf_xet' package is not installed. Falling back to regular HTTP download. For better performance, install the package with: `pip install huggingface_hub[hf_xet]` or `pip install hf_xet`
+
+
+
+.. raw:: latex
+
+   \diilbookstyleoutputcell
+
+.. parsed-literal::
+    :class: output
+
+    bert_small.safetensors:   0%|          | 0.00/128M [00:00<?, ?B/s]
+
+
+.. raw:: latex
+
+   \diilbookstyleoutputcell
+
+.. parsed-literal::
+    :class: output
+
+    /Users/macsmith/.cache/huggingface/hub/models--d2l-mlx--bert_mlx/snapshots/38a4af2213dbe60e53cff34675aa23ccc53e1b82/bert_small.safetensors
 
 
 两个预训练好的BERT模型都包含一个定义词表的“vocab.json”文件和一个预训练参数的“pretrained.params”文件。我们实现了以下\ ``load_pretrained_model``\ 函数来加载预先训练好的BERT参数。
@@ -329,7 +371,7 @@
         def train_step(net, X, y):
             y_hat = net(X)
             los = loss(y_hat, y, reduction='sum')
-            # mx.eval(los)
+            mx.eval(los)
             acc = mx.sum(mx.argmax(y_hat, axis=-1) == y)
             return los, acc
     
@@ -370,7 +412,7 @@
     :class: output
 
     loss 0.465, train acc 0.817, test acc 0.786
-    3826.5 examples/sec 
+    3926.8 examples/sec 
 
 
 
@@ -380,8 +422,8 @@
 小结
 ----
 
--  我们可以针对下游应用对预训练的BERT模型进行微调，例如在SNLI数据集上进行自然语言推断。
--  在微调过程中，BERT模型成为下游应用模型的一部分。仅与训练前损失相关的参数在微调期间不会更新。
+- 我们可以针对下游应用对预训练的BERT模型进行微调，例如在SNLI数据集上进行自然语言推断。
+- 在微调过程中，BERT模型成为下游应用模型的一部分。仅与训练前损失相关的参数在微调期间不会更新。
 
 练习
 ----

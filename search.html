@@ -54,9 +54,9 @@
       <div class="mdl-layout-spacer"></div>
       <nav class="mdl-navigation">
           
-              <a  class="mdl-navigation__link" href="https://zh-v2.d2l.ai/d2l-zh.pdf">
+              <a  class="mdl-navigation__link" href="https//ml-exploit.github.io/d2l-zh/download/d2l-zh-mlx.pdf">
                   <i class="fas fa-file-pdf"></i>
-                  MXNet
+                  MLX
               </a>
           
               <a  class="mdl-navigation__link" href="https://zh-v2.d2l.ai/d2l-zh-pytorch.pdf">
@@ -209,6 +209,7 @@
 <li class="toctree-l2"><a class="reference internal" href="chapter_optimization/rmsprop.html">11.8. RMSProp算法</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chapter_optimization/adadelta.html">11.9. Adadelta</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chapter_optimization/adam.html">11.10. Adam算法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter_optimization/lr-scheduler.html">11.11. 学习率调度器</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="chapter_computational-performance/index.html">12. 计算性能</a><ul class="simple">
@@ -226,8 +227,9 @@
 <li class="toctree-l2"><a class="reference internal" href="chapter_computer-vision/semantic-segmentation-and-dataset.html">13.9. 语义分割和数据集</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chapter_computer-vision/transposed-conv.html">13.10. 转置卷积</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chapter_computer-vision/fcn.html">13.11. 全卷积网络</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chapter_computer-vision/kaggle-cifar10.html">13.12. 实战 Kaggle 比赛：图像分类 (CIFAR-10)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chapter_computer-vision/kaggle-dog.html">13.13. 实战Kaggle比赛：狗的品种识别（ImageNet Dogs）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter_computer-vision/neural-style.html">13.12. 风格迁移</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter_computer-vision/kaggle-cifar10.html">13.13. 实战 Kaggle 比赛：图像分类 (CIFAR-10)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter_computer-vision/kaggle-dog.html">13.14. 实战Kaggle比赛：狗的品种识别（ImageNet Dogs）</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="chapter_natural-language-processing-pretraining/index.html">14. 自然语言处理：预训练</a><ul>
@@ -245,11 +247,12 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="chapter_natural-language-processing-applications/index.html">15. 自然语言处理：应用</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="chapter_natural-language-processing-applications/sentiment-analysis-and-dataset.html">15.1. 情感分析及数据集</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chapter_natural-language-processing-applications/sentiment-analysis-cnn.html">15.2. 情感分析：使用卷积神经网络</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chapter_natural-language-processing-applications/natural-language-inference-and-dataset.html">15.3. 自然语言推断与数据集</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chapter_natural-language-processing-applications/natural-language-inference-attention.html">15.4. 自然语言推断：使用注意力</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chapter_natural-language-processing-applications/finetuning-bert.html">15.5. 针对序列级和词元级应用微调BERT</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chapter_natural-language-processing-applications/natural-language-inference-bert.html">15.6. 自然语言推断：微调BERT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter_natural-language-processing-applications/sentiment-analysis-rnn.html">15.2. 情感分析：使用循环神经网络</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter_natural-language-processing-applications/sentiment-analysis-cnn.html">15.3. 情感分析：使用卷积神经网络</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter_natural-language-processing-applications/natural-language-inference-and-dataset.html">15.4. 自然语言推断与数据集</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter_natural-language-processing-applications/natural-language-inference-attention.html">15.5. 自然语言推断：使用注意力</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter_natural-language-processing-applications/finetuning-bert.html">15.6. 针对序列级和词元级应用微调BERT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter_natural-language-processing-applications/natural-language-inference-bert.html">15.7. 自然语言推断：微调BERT</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="chapter_appendix-tools-for-deep-learning/index.html">16. Appendix: Tools for Deep Learning</a><ul>
@@ -396,6 +399,7 @@
 <li class="toctree-l2"><a class="reference internal" href="chapter_optimization/rmsprop.html">11.8. RMSProp算法</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chapter_optimization/adadelta.html">11.9. Adadelta</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chapter_optimization/adam.html">11.10. Adam算法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter_optimization/lr-scheduler.html">11.11. 学习率调度器</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="chapter_computational-performance/index.html">12. 计算性能</a><ul class="simple">
@@ -413,8 +417,9 @@
 <li class="toctree-l2"><a class="reference internal" href="chapter_computer-vision/semantic-segmentation-and-dataset.html">13.9. 语义分割和数据集</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chapter_computer-vision/transposed-conv.html">13.10. 转置卷积</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chapter_computer-vision/fcn.html">13.11. 全卷积网络</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chapter_computer-vision/kaggle-cifar10.html">13.12. 实战 Kaggle 比赛：图像分类 (CIFAR-10)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chapter_computer-vision/kaggle-dog.html">13.13. 实战Kaggle比赛：狗的品种识别（ImageNet Dogs）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter_computer-vision/neural-style.html">13.12. 风格迁移</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter_computer-vision/kaggle-cifar10.html">13.13. 实战 Kaggle 比赛：图像分类 (CIFAR-10)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter_computer-vision/kaggle-dog.html">13.14. 实战Kaggle比赛：狗的品种识别（ImageNet Dogs）</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="chapter_natural-language-processing-pretraining/index.html">14. 自然语言处理：预训练</a><ul>
@@ -432,11 +437,12 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="chapter_natural-language-processing-applications/index.html">15. 自然语言处理：应用</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="chapter_natural-language-processing-applications/sentiment-analysis-and-dataset.html">15.1. 情感分析及数据集</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chapter_natural-language-processing-applications/sentiment-analysis-cnn.html">15.2. 情感分析：使用卷积神经网络</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chapter_natural-language-processing-applications/natural-language-inference-and-dataset.html">15.3. 自然语言推断与数据集</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chapter_natural-language-processing-applications/natural-language-inference-attention.html">15.4. 自然语言推断：使用注意力</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chapter_natural-language-processing-applications/finetuning-bert.html">15.5. 针对序列级和词元级应用微调BERT</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chapter_natural-language-processing-applications/natural-language-inference-bert.html">15.6. 自然语言推断：微调BERT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter_natural-language-processing-applications/sentiment-analysis-rnn.html">15.2. 情感分析：使用循环神经网络</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter_natural-language-processing-applications/sentiment-analysis-cnn.html">15.3. 情感分析：使用卷积神经网络</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter_natural-language-processing-applications/natural-language-inference-and-dataset.html">15.4. 自然语言推断与数据集</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter_natural-language-processing-applications/natural-language-inference-attention.html">15.5. 自然语言推断：使用注意力</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter_natural-language-processing-applications/finetuning-bert.html">15.6. 针对序列级和词元级应用微调BERT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter_natural-language-processing-applications/natural-language-inference-bert.html">15.7. 自然语言推断：微调BERT</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="chapter_appendix-tools-for-deep-learning/index.html">16. Appendix: Tools for Deep Learning</a><ul>
